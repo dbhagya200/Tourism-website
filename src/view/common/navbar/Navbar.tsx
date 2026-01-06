@@ -18,7 +18,7 @@ export function Navbar() {
     const navLinks = [
         { path: "/", label: "Home" },
         { path: "/packages", label: "Packages" },
-        { path: "/reels", label: "Travel Reels" },
+        { path: "/reels", label: "TravelReels" },
         { path: "/reviews", label: "Reviews" },
         { path: "/gallery", label: "Gallery" },
         { path: "/contact", label: "Contact" },
