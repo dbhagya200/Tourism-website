@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes} from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -11,7 +11,6 @@ import { Packages } from "./view/pages/packages/Packages";
 import { Reviews } from "./view/pages/reviews/Reviews";
 import { Gallery } from "./view/pages/gallery/Gallery";
 import { Contact } from "./view/pages/contact/Contact";
-
 function App() {
     // Initialize animations
     useEffect(() => {
@@ -19,7 +18,7 @@ function App() {
     }, []);
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 {/* Parent Route: Applies Navbar & Footer to everything inside */}
                 <Route path="/" element={<DefaultLayout />}>
@@ -30,9 +29,10 @@ function App() {
                     <Route path="reviews" element={<Reviews />} />
                     <Route path="gallery" element={<Gallery />} />
                     <Route path="contact" element={<Contact />} />
+                    {/*<Route path="book" element={<Book />} />*/}
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 

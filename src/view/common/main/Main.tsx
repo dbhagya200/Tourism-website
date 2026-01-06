@@ -4,10 +4,10 @@ import { Play } from "lucide-react";
 export function Main() {
 
     return (
-        <main className="bg-slate-900">
+        <main className="bg-slate-900 ">
             {/* Hero Section */}
             <section
-                className="relative h-screen flex items-center justify-center -mt-20 overflow-hidden"
+                className="relative h-screen flex items-center justify-center overflow-hidden"
                 style={{
                     backgroundImage:
                         "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80')",
@@ -17,7 +17,7 @@ export function Main() {
                 }}
             >
                 <div className="text-center z-10 px-4 mt-20" data-aos="zoom-out">
-                    <p className="text-teal-400 text-lg font-semibold mb-4 tracking-wider">
+                    <p className="text-white text-lg font-semibold mb-4 tracking-wider">
                         Sri Lanka's Most Premium Agency
                     </p>
                     <h1 className="text-5xl md:text-8xl font-black tracking-tight text-white mb-6 leading-tight font-serif">

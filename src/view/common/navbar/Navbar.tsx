@@ -51,7 +51,7 @@ export function Navbar() {
                                 to={link.path}
                                 className={`text-sm font-medium transition-all duration-300 ${
                                     isActive(link.path)
-                                        ? "text-slate-100/80 hover:text-teal-400"
+                                        ? "text-teal-400"
                                         : "text-slate-100/80 hover:text-teal-400"
                                 }`}
                             >
