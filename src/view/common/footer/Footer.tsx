@@ -1,54 +1,130 @@
-import { Facebook, Instagram, Phone, MessageCircle, Mail, MapPin, PhoneCall } from 'lucide-react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import {
+    Phone,
+    Mail,
+    MapPin,
+    Facebook,
+    Instagram,
+    MessageCircle,
+} from "lucide-react";
 
-export function Footer () {
-    const links = [
-        { name: 'Home', path: '/' },
-        { name: 'Packages', path: '/packages' },
-        { name: 'Reels', path: '/reels' },
-        { name: 'Contact', path: '/contact' }
-    ];
+// CHANGED: Using named export to match your project structure
+export function Footer() {
     return (
-        <footer className="bg-[#070b14] px-[8%] py-20 border-t border-white/10 mt-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-                <div className="col-span-1 md:col-span-2">
-                    <h2 className="text-2xl font-bold text-primary mb-4 font-serif">CEYLON VISTA TOURS</h2>
-                    <p className="text-gray-400 mb-6 max-w-sm">Ceylon Vista Tours provides world-class travel experiences across Sri Lanka. Discover hidden gems with unmatched luxury.</p>
-                    <div className="flex gap-4">
-                        {[Facebook, Instagram, Phone, MessageCircle].map((Icon, i) => (
-                            <a key={i} href="#" className="w-12 h-12 glass-card flex items-center justify-center rounded-xl hover:text-primary hover:scale-110 transition">
-                                <Icon size={20} />
+        <footer className="bg-slate-950 border-t border-white/10 py-16 px-8 mt-auto">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                    {/* Brand Section */}
+                    <div className="md:col-span-2">
+                        <h2 className="text-2xl font-black tracking-tight text-teal-400 mb-4">
+                            CEYLON VISTA TOURS
+                        </h2>
+                        <p className="text-slate-300/80 mb-6 text-sm leading-relaxed max-w-sm">
+                            Ceylon Vista Tours provides world-class travel experiences across
+                            Sri Lanka. Discover hidden gems with unmatched luxury and local
+                            expertise.
+                        </p>
+                        <div className="flex gap-3">
+                            <a
+                                href="https://facebook.com/ceylonvistatours"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-11 h-11 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-slate-100 hover:bg-teal-400 hover:text-slate-900 hover:border-teal-400 transition-all duration-300"
+                                aria-label="Facebook"
+                            >
+                                <Facebook size={20} />
                             </a>
-                        ))}
+                            <a
+                                href="https://instagram.com/ceylonvistatours"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-11 h-11 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-slate-100 hover:bg-teal-400 hover:text-slate-900 hover:border-teal-400 transition-all duration-300"
+                                aria-label="Instagram"
+                            >
+                                <Instagram size={20} />
+                            </a>
+                            <a
+                                href="https://wa.me/94771234567"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-11 h-11 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-slate-100 hover:bg-teal-400 hover:text-slate-900 hover:border-teal-400 transition-all duration-300"
+                                aria-label="WhatsApp"
+                            >
+                                <MessageCircle size={20} />
+                            </a>
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <h3 className="text-xl font-serif font-bold mb-6">Quick Links</h3>
-                    <ul className="space-y-3 text-gray-400">
-                        {links.map((item) => (
-                            <li key={item.name}>
-                                {/* Use Link instead of a tag */}
-                                <Link to={item.path} className="hover:text-primary transition">
-                                    {item.name}
+                    {/* Quick Links */}
+                    <div>
+                        <h3 className="font-bold text-white mb-4">Quick Links</h3>
+                        <ul className="space-y-2">
+                            <li>
+                                <Link
+                                    to="/"
+                                    className="text-slate-300/80 hover:text-teal-400 transition-colors text-sm"
+                                >
+                                    Home
                                 </Link>
                             </li>
-                        ))}
-                    </ul>
-                </div>
+                            <li>
+                                <Link
+                                    to="/packages"
+                                    className="text-slate-300/80 hover:text-teal-400 transition-colors text-sm"
+                                >
+                                    Sri Lanka Packages
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/reels"
+                                    className="text-slate-300/80 hover:text-teal-400 transition-colors text-sm"
+                                >
+                                    Travel Shorts
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/contact"
+                                    className="text-slate-300/80 hover:text-teal-400 transition-colors text-sm"
+                                >
+                                    Contact Us
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div>
-                    <h3 className="text-xl font-serif font-bold mb-6">Contact Info</h3>
-                    <div className="space-y-4 text-gray-400">
-                        <div className="flex items-center gap-3"><PhoneCall size={18} /> +94 77 123 4567</div>
-                        <div className="flex items-center gap-3"><Mail size={18} /> info@ceylonvista.lk</div>
-                        <div className="flex items-center gap-3"><MapPin size={18} /> Colombo 07, Sri Lanka</div>
+                    {/* Contact Info */}
+                    <div>
+                        <h3 className="font-bold text-white mb-4">Contact Info</h3>
+                        <ul className="space-y-3">
+                            <li className="flex items-start gap-3">
+                                <Phone size={18} className="text-teal-400 flex-shrink-0 mt-0.5" />
+                                <span className="text-slate-300/80 text-sm">+94 77 123 4567</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <Mail size={18} className="text-teal-400 flex-shrink-0 mt-0.5" />
+                                <span className="text-slate-300/80 text-sm">
+                  info@ceylonvistatours.lk
+                </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <MapPin size={18} className="text-teal-400 flex-shrink-0 mt-0.5" />
+                                <span className="text-slate-300/80 text-sm">
+                  Colombo 07, Sri Lanka
+                </span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div className="text-center text-gray-600 mt-16 pt-8 border-t border-white/5">
-                &copy; 2026 Ceylon Vista Tours. All Rights Reserved.
+
+                {/* Divider */}
+                <div className="border-t border-white/10 pt-8">
+                    <p className="text-center text-slate-400 text-sm">
+                        &copy; 2026 Ceylon Vista Tours Sri Lanka. All Rights Reserved.
+                    </p>
+                </div>
             </div>
         </footer>
     );
-};
+}
