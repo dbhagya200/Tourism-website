@@ -28,7 +28,7 @@ function App() {
             <ScrollToTop/>
             <Routes>
                 {/* Parent Route: Applies Navbar & Footer to everything inside */}
-                <Route path="/" element={<DefaultLayout />}>
+                <Route path="/*" element={<DefaultLayout />}>
                 </Route>
             </Routes>
         </HashRouter>
