@@ -25,7 +25,7 @@ function App() {
 
     return (
         <HashRouter>
-            {/*<ScrollToTop/>*/}
+            <ScrollToTop/>
             <Routes>
                 {/* Parent Route: Applies Navbar & Footer to everything inside */}
                 <Route path="/" element={<DefaultLayout />}>
