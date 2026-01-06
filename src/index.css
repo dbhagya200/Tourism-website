@@ -9,7 +9,7 @@
 
 /* Fix for standard scroll behavior */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {

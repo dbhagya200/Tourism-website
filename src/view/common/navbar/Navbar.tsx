@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-// CHANGED: Renamed "Navigation" to "Navbar" and used named export to match your project
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -44,7 +43,7 @@ export function Navbar() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <ul className="hidden md:flex gap-8 list-none">
+                <ul className="hidden md:flex gap-8 list-none ">
                     {navLinks.map((link) => (
                         <li key={link.path}>
                             <Link
