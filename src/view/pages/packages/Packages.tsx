@@ -1,9 +1,7 @@
 import { Star, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// CHANGED: Named export to match your App.tsx structure
 export function Packages() {
-    // Dynamic packages array
     const packages = [
         {
             id: 1,
@@ -114,7 +112,6 @@ export function Packages() {
             {/* Header Section */}
             <section className="px-8 py-16 bg-gradient-to-b from-slate-800 to-slate-900">
                 <div className="max-w-7xl mx-auto text-center">
-                    {/* CHANGED: font-display to font-serif to match your project font */}
                     <h1 className="text-4xl md:text-6xl font-black text-white mb-4 font-serif">
                         Sri Lanka Holiday Packages
                     </h1>

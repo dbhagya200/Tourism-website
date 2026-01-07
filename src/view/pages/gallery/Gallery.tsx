@@ -2,11 +2,9 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// CHANGED: "export default" to "export function" to match your App.tsx routing
 export function Gallery() {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-    // Dynamic gallery array organized by category
     const galleryItems = [
         {
             id: 1,
@@ -77,7 +75,6 @@ export function Gallery() {
             {/* Header */}
             <section className="px-8 py-16 bg-gradient-to-b from-slate-800 to-slate-900">
                 <div className="max-w-7xl mx-auto text-center">
-                    {/* CHANGED: font-display to font-serif to use your Playfair Display font */}
                     <h1 className="text-4xl md:text-6xl font-black text-white mb-4 font-serif">
                         Sri Lanka Destination Gallery
                     </h1>
@@ -147,7 +144,6 @@ export function Gallery() {
                             <div
                                 key={item.id}
                                 className={`relative rounded-2xl overflow-hidden cursor-pointer group border border-white/10 hover:border-teal-400/50 transition-all duration-300 ${
-                                    // Logic to make specific grid items span larger areas for masonry effect
                                     (idx === 0 || idx === 4) && selectedCategory === 'All' ? "sm:col-span-2 lg:row-span-2 auto-rows-[600px]" : ""
                                 }`}
                                 onClick={() => setSelectedImage(idx)}

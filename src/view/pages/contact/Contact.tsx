@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send,Facebook,
+    Instagram, Linkedin, MessageCircle, } from "lucide-react";
 
 export function Contact() {
     const [formData, setFormData] = useState({
@@ -23,7 +24,6 @@ export function Contact() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Simulate form submission
         console.log("Form submitted:", formData);
         setSubmitted(true);
         setTimeout(() => {
@@ -53,12 +53,36 @@ export function Contact() {
         },
     ];
 
+    const socialLinks = [
+        {
+            name: "Facebook",
+            icon: Facebook,
+            href: "https://facebook.com",
+        },
+        {
+            name: "Instagram",
+            icon: Instagram,
+            href: "https://instagram.com",
+        },
+        {
+            name: "WhatsApp",
+            icon: MessageCircle,
+            href: "https://wa.me/94771234567",
+        },
+        {
+            name: "LinkedIn",
+            icon: Linkedin,
+            href: "https://linkedin.com",
+        },
+    ];
+
+
     return (
         <main className="bg-slate-900 pt-24">
             {/* Header */}
             <section className="px-8 py-16 bg-gradient-to-b from-slate-800 to-slate-900">
                 <div className="max-w-7xl mx-auto text-center">
-                    <h1 className="text-4xl md:text-6xl font-black text-white mb-4 font-display">
+                    <h1 className="text-4xl md:text-6xl font-black text-white mb-4 font-serif">
                         Let's Plan Your Adventure
                     </h1>
                     <p className="text-slate-300/80 text-lg">
@@ -108,21 +132,30 @@ export function Contact() {
                             {/* Social Media */}
                             <div>
                                 <h3 className="font-bold text-white mb-4">Follow Us</h3>
+
                                 <div className="flex gap-3">
-                                    {["Facebook", "Instagram", "WhatsApp", "LinkedIn"].map(
-                                        (social) => (
+                                    {socialLinks.map((social) => {
+                                        const Icon = social.icon;
+
+                                        return (
                                             <a
-                                                key={social}
-                                                href="#"
-                                                className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-slate-100 hover:bg-teal-400 hover:text-slate-900 hover:border-teal-400 transition-all duration-300"
-                                                aria-label={social}
+                                                key={social.name}
+                                                href={social.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={social.name}
+                                                className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg
+                                                    flex items-center justify-center text-slate-100
+                                                    hover:bg-teal-400 hover:text-slate-900 hover:border-teal-400
+                                                     transition-all duration-300 hover:scale-110"
                                             >
-                                                <span className="text-xs font-bold">{social[0]}</span>
+                                                <Icon size={20} />
                                             </a>
-                                        )
-                                    )}
+                                        );
+                                    })}
                                 </div>
                             </div>
+
                         </div>
 
                         {/* Contact Form */}

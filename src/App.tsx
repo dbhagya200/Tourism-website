@@ -1,19 +1,23 @@
 import { useEffect } from "react";
-import {HashRouter, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes, useLocation} from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// Import your components...
 import { DefaultLayout } from "./view/common/defaultLayout/DefaultLayout";
-// export function ScrollToTop() {
-//     const { pathname } = useLocation();
-//
-//     useEffect(() => {
-//         window.scrollTo(0, 0);
-//     }, [pathname]);
-//
-//     return null;
-// }
+import {Navbar} from "./view/common/navbar/Navbar.tsx";
+export function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        })
+    }, [pathname]);
+
+    return null;
+}
 
 function App() {
     // Initialize animations
@@ -23,9 +27,9 @@ function App() {
 
     return (
         <HashRouter>
-            {/*<ScrollToTop/>*/}
+            <ScrollToTop/>
+            <Navbar/>
             <Routes>
-                {/* Parent Route: Applies Navbar & Footer to everything inside */}
                 <Route path="/*" element={<DefaultLayout />}>
                 </Route>
             </Routes>

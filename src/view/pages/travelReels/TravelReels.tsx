@@ -2,11 +2,9 @@ import { useState } from "react";
 import { Play, MapPin, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// CHANGED: "export default function Reels" -> "export function TravelReels"
 export function TravelReels() {
     const [selectedReel, setSelectedReel] = useState<number | null>(null);
 
-    // Dynamic reels array
     const reels = [
         {
             id: 1,
