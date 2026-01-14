@@ -1,46 +1,7 @@
 import { Link } from "react-router-dom";
 import { Play, ArrowRight, Star, MapPin, Eye } from "lucide-react";
-
-// Data for the summary cards
-const featuredPackages = [
-    {
-        id: 1,
-        title: "Highland Magic",
-        price: "$450",
-        duration: "5 Days",
-        image: "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-        id: 2,
-        title: "Coastal Serenity",
-        price: "$720",
-        duration: "7 Days",
-        image: "https://images.unsplash.com/photo-1586500036706-41963de24d8b?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-        id: 3,
-        title: "Wild Safari",
-        price: "$600",
-        duration: "4 Days",
-        image: "https://images.unsplash.com/photo-1552423158-efc54b6df1e1?auto=format&fit=crop&w=800&q=80"
-    }
-];
-
-
-const featuredReviews = [
-    {
-        id: 1,
-        name: "Amara Perera",
-        text: "The hiking experience in Ella was beyond magical. Ceylon Vista Tours made it so easy!",
-        stars: 5
-    },
-    {
-        id: 2,
-        name: "John Doe",
-        text: "Best luxury travel agency in Sri Lanka. Everything was perfectly organized.",
-        stars: 5
-    }
-];
+import '../../../GlobalData'
+import {featuredPackages, featuredReviews} from "../../../GlobalData.ts";
 
 export function Home() {
     return (
@@ -87,7 +48,7 @@ export function Home() {
             </section>
 
             {/* --- Reels Teaser Section --- */}
-            <section className="py-16 px-6 md:px-12 bg-slate-900 border-b border-white/5">
+            <section className="py-16 px-6 md:px-12 bg-slate-800  border-white/5">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-8 max-w-7xl mx-auto">
                     <div>
                         <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2">Travel Shorts</h2>
@@ -185,7 +146,7 @@ export function Home() {
             </section>
 
             {/* --- Reviews Teaser Section --- */}
-            <section className="py-20 px-6 md:px-12 bg-slate-900 relative overflow-hidden">
+            <section className="py-20 px-6 md:px-12 bg-slate-800 relative overflow-hidden">
                 {/* Decorative blob */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
@@ -256,7 +217,7 @@ export function Home() {
             </section>
 
             {/* --- Contact CTA --- */}
-            <section className="py-24 px-6 md:px-12 bg-slate-900">
+            <section className="py-24 px-6 md:px-12 bg-slate-800">
                 <div className="max-w-5xl mx-auto bg-gradient-to-r from-teal-500 to-emerald-600 rounded-[3rem] p-10 md:p-16 text-center text-white shadow-[0_20px_50px_rgba(20,184,166,0.3)]" data-aos="zoom-in">
                     <h2 className="text-3xl md:text-5xl font-serif font-black mb-6">Ready for your Dream Vacation?</h2>
                     <p className="text-lg md:text-xl text-teal-50 max-w-2xl mx-auto mb-10">

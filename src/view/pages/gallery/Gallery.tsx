@@ -1,67 +1,10 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import { Link } from "react-router-dom";
+import {galleryItems} from "../../../GlobalData.ts";
 
 export function Gallery() {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
-
-    const galleryItems = [
-        {
-            id: 1,
-            category: "Mountains",
-            src: "https://images.unsplash.com/photo-1529230117010-335661a5b89a?auto=format&fit=crop&w=800",
-            alt: "Beautiful mountain landscape",
-        },
-        {
-            id: 2,
-            category: "Wildlife",
-            src: "https://images.unsplash.com/photo-1552423158-efc54b6df1e1?auto=format&fit=crop&w=800",
-            alt: "Sri Lanka wildlife",
-        },
-        {
-            id: 3,
-            category: "Culture",
-            src: "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=800",
-            alt: "Cultural sites",
-        },
-        {
-            id: 4,
-            category: "Beaches",
-            src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800",
-            alt: "Pristine beaches",
-        },
-        {
-            id: 5,
-            category: "Nature",
-            src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800",
-            alt: "Lush nature and forests",
-        },
-        {
-            id: 6,
-            category: "Adventure",
-            src: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800",
-            alt: "Adventure activities",
-        },
-        {
-            id: 7,
-            category: "Sunsets",
-            src: "https://images.unsplash.com/photo-1495585816603-83d5b814b5a6?auto=format&fit=crop&w=800",
-            alt: "Beautiful sunset",
-        },
-        {
-            id: 8,
-            category: "Culture",
-            src: "https://images.unsplash.com/photo-1548013146-72c260e80e32?auto=format&fit=crop&w=800",
-            alt: "Temple and cultural heritage",
-        },
-        {
-            id: 9,
-            category: "Mountains",
-            src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800",
-            alt: "Mountain peaks and valleys",
-        },
-    ];
-
     const categories = ["All", ...new Set(galleryItems.map((item) => item.category))];
     const [selectedCategory, setSelectedCategory] = useState("All");
 

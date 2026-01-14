@@ -1,64 +1,8 @@
 import { Star, Quote, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { allReviews} from "../../../GlobalData.ts";
 
 export function Reviews() {
-    const allReviews = [
-        {
-            id: 1,
-            name: "Amara Perera",
-            role: "Local Guide • Google",
-            avatar: "https://i.pravatar.cc/150?u=1",
-            comment: "The hiking experience in Ella was beyond magical. Ceylon Vista Tours made it so easy!",
-            rating: 5,
-            verified: true,
-        },
-        {
-            id: 2,
-            name: "John Doe",
-            role: "Adventurer • TripAdvisor",
-            avatar: "https://i.pravatar.cc/150?u=2",
-            comment: "Best luxury travel agency in Sri Lanka. Everything was perfectly organized.",
-            rating: 5,
-            verified: true,
-        },
-        {
-            id: 3,
-            name: "Sarah Johnson",
-            role: "Travel Blogger • Facebook",
-            avatar: "https://i.pravatar.cc/150?u=3",
-            comment: "Exceptional service and attention to detail. Highly recommend for luxury travelers.",
-            rating: 5,
-            verified: true,
-        },
-        {
-            id: 4,
-            name: "Rajesh Kumar",
-            role: "Business Traveler • LinkedIn",
-            avatar: "https://i.pravatar.cc/150?u=4",
-            comment: "Professional team that understands what luxury means. Outstanding experience throughout.",
-            rating: 4,
-            verified: true,
-        },
-        {
-            id: 5,
-            name: "Emma Williams",
-            role: "Couple on Honeymoon • Google",
-            avatar: "https://i.pravatar.cc/150?u=5",
-            comment: "Made our honeymoon absolutely perfect. Every detail was thoughtfully planned.",
-            rating: 5,
-            verified: true,
-        },
-        {
-            id: 6,
-            name: "Michael Chen",
-            role: "Family Traveler • TripAdvisor",
-            avatar: "https://i.pravatar.cc/150?u=6",
-            comment: "Great packages for families. Kids had amazing time exploring Sri Lanka safely.",
-            rating: 4,
-            verified: true,
-        },
-    ];
-
     const averageRating = (
         allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length
     ).toFixed(1);

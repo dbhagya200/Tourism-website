@@ -1,93 +1,10 @@
 import { useState } from "react";
 import { Play, MapPin, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { reels} from "../../../GlobalData.ts";
 
 export function TravelReels() {
     const [selectedReel, setSelectedReel] = useState<number | null>(null);
-
-    const reels = [
-        {
-            id: 1,
-            title: "Ella Adventures",
-            location: "Ella, Central Highlands",
-            badge: "Watch",
-            src: "https://www.youtube.com/embed/pSj7jS9XNn0?controls=1&modestbranding=1&rel=0",
-            thumbnail: "https://img.youtube.com/vi/pSj7jS9XNn0/hqdefault.jpg",
-            description:
-                "Explore the misty mountains and tea plantations of Ella. Experience Little Adam's Peak trek and stunning viewpoints.",
-        },
-        {
-            id: 2,
-            title: "Mirissa Beach Paradise",
-            location: "Mirissa, South Coast",
-            badge: "Trending",
-            src: "https://www.youtube.com/embed/j_N8YgK8Vyo?controls=1&modestbranding=1&rel=0",
-            thumbnail: "https://img.youtube.com/vi/j_N8YgK8Vyo/hqdefault.jpg",
-            description:
-                "Pristine beaches and whale watching adventures. Watch the sunset from our luxury beach resort.",
-        },
-        {
-            id: 3,
-            title: "Safari Wilderness",
-            location: "Yala National Park",
-            badge: "Adventure",
-            src: "https://www.youtube.com/embed/S_vTOnY_F_M?controls=1&modestbranding=1&rel=0",
-            thumbnail: "https://img.youtube.com/vi/S_vTOnY_F_M/hqdefault.jpg",
-            description:
-                "Encounter Sri Lanka's incredible wildlife including leopards, elephants, and rare bird species.",
-        },
-        {
-            id: 4,
-            title: "Nature Beauty",
-            location: "Sigiriya & Dambulla",
-            badge: "Nature",
-            src: "https://www.youtube.com/embed/0SNoX_eF_L8?controls=1&modestbranding=1&rel=0",
-            thumbnail: "https://img.youtube.com/vi/0SNoX_eF_L8/hqdefault.jpg",
-            description:
-                "Ancient temples, massive rock fortresses, and breathtaking natural landscapes of central Sri Lanka.",
-        },
-        {
-            id: 5,
-            title: "Tea Plantation Tour",
-            location: "Nuwara Eliya",
-            badge: "Cultural",
-            src: "https://www.youtube.com/embed/pSj7jS9XNn0?controls=1&modestbranding=1&rel=0",
-            thumbnail: "https://img.youtube.com/vi/pSj7jS9XNn0/hqdefault.jpg",
-            description:
-                "Journey through lush tea gardens, meet local tea pickers, and taste the world-famous Ceylon tea.",
-        },
-        {
-            id: 6,
-            title: "Sunset at Lighthouse",
-            location: "Galle Face",
-            badge: "Romantic",
-            src: "https://www.youtube.com/embed/j_N8YgK8Vyo?controls=1&modestbranding=1&rel=0",
-            thumbnail: "https://img.youtube.com/vi/j_N8YgK8Vyo/hqdefault.jpg",
-            description:
-                "Experience magical sunsets from the iconic lighthouse with champagne and ocean views.",
-        },
-        {
-            id: 7,
-            title: "Water Sports Adventure",
-            location: "Arugam Bay",
-            badge: "Action",
-            src: "https://www.youtube.com/embed/S_vTOnY_F_M?controls=1&modestbranding=1&rel=0",
-            thumbnail: "https://img.youtube.com/vi/S_vTOnY_F_M/hqdefault.jpg",
-            description:
-                "Surfing, diving, and water sports in one of Asia's most vibrant beach towns.",
-        },
-        {
-            id: 8,
-            title: "Colonial Colombo",
-            location: "Colombo City",
-            badge: "Cultural",
-            src: "https://www.youtube.com/embed/0SNoX_eF_L8?controls=1&modestbranding=1&rel=0",
-            thumbnail: "https://img.youtube.com/vi/0SNoX_eF_L8/hqdefault.jpg",
-            description:
-                "Discover the bustling capital with its colonial architecture, modern shopping, and vibrant nightlife.",
-        },
-    ];
-
     return (
         <main className="bg-slate-900 pt-24 min-h-screen">
             {/* Header */}

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send,Facebook,
-    Instagram, Linkedin, MessageCircle, } from "lucide-react";
+import {contactInfo, socialLinks} from "../../../GlobalData.ts";
+import {Send} from "lucide-react";
 
 export function Contact() {
     const [formData, setFormData] = useState({
@@ -31,50 +31,6 @@ export function Contact() {
             setSubmitted(false);
         }, 3000);
     };
-
-    const contactInfo = [
-        {
-            icon: Phone,
-            title: "Phone",
-            value: "+94 77 123 4567",
-            detail: "Available 24/7",
-        },
-        {
-            icon: Mail,
-            title: "Email",
-            value: "info@ceylonvistatours.lk",
-            detail: "Response within 2 hours",
-        },
-        {
-            icon: MapPin,
-            title: "Office",
-            value: "Colombo 07, Sri Lanka",
-            detail: "Visit us anytime",
-        },
-    ];
-
-    const socialLinks = [
-        {
-            name: "Facebook",
-            icon: Facebook,
-            href: "https://facebook.com",
-        },
-        {
-            name: "Instagram",
-            icon: Instagram,
-            href: "https://instagram.com",
-        },
-        {
-            name: "WhatsApp",
-            icon: MessageCircle,
-            href: "https://wa.me/94771234567",
-        },
-        {
-            name: "LinkedIn",
-            icon: Linkedin,
-            href: "https://linkedin.com",
-        },
-    ];
 
 
     return (
