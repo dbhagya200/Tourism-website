@@ -32,7 +32,7 @@ export function Navbar() {
             className={`fixed top-0 w-full z-50 transition-all duration-300 ${
                 isScrolled
                     // THEME: On scroll -> White background with shadow
-                    ? "bg-white/90 backdrop-blur-md border-b border-sky-100 py-3 px-8 shadow-sm"
+                    ? "bg-gray-300 backdrop-blur-md border-b border-sky-100 py-3 px-8 shadow-sm"
                     // THEME: Top -> Transparent
                     : "bg-transparent py-6 px-8"
             }`}
