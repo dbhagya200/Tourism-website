@@ -12,7 +12,8 @@ export function Home() {
                 className="relative h-screen flex items-center justify-center overflow-hidden"
                 style={{
                     backgroundImage:
-                        "linear-gradient(rgba(15, 23, 42, 0.3), rgba(3, 105, 161, 0.3)), url('https://images.pexels.com/photos/34128247/pexels-photo-34128247.jpeg')",
+                        "linear-gradient(rgba(15, 23, 42, 0.3), rgba(3, 105, 161, 0.2))," +
+                        " url('https://www.lovesrilanka.org/wp-content/uploads/2020/04/LS_Ella_Main_Desktop_1920x700.jpg')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundAttachment: "fixed",

@@ -10,5 +10,5 @@ html {
 }
 
 body {
-  @apply bg-slate-900 text-white antialiased font-sans;
+  @apply bg-slate-900 text-white antialiased font-serif ;
 }

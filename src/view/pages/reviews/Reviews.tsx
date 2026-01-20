@@ -1,6 +1,6 @@
 import { Star, Quote, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import { allReviews} from "../../../GlobalData.ts";
+import { allReviews } from "../../../GlobalData.ts";
 
 export function Reviews() {
     const averageRating = (
@@ -8,37 +8,49 @@ export function Reviews() {
     ).toFixed(1);
 
     return (
-        <main className="bg-slate-900 pt-24 min-h-screen">
-            {/* Header */}
-            <section className="px-8 py-16 bg-gradient-to-b from-slate-800 to-slate-900">
-                <div className="max-w-7xl mx-auto">
-                    {/* CHANGED: font-display -> font-serif */}
-                    <h1 className="text-4xl md:text-6xl font-black text-white mb-6 font-serif">
-                        Guest Reviews
+        // THEME: Light Background
+        <main className="min-h-screen font-sans text-slate-800 bg-white">
+
+            {/* Header / Hero Section */}
+            <section
+                className="relative h-[100vh] flex items-center justify-center bg-cover bg-center bg-fixed"
+                style={{
+                    // Happy Travelers / Group Image
+                    backgroundImage: "url('https://www.lovesrilanka.org/wp-content/uploads/2020/06/LS_B2_Main-landing-page_1920x700-1.jpg')"
+                }}
+            >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-slate-900/40"></div>
+
+                <div className="max-w-7xl mx-auto w-full px-8 relative z-10 mt-20">
+                    <h1 className="text-4xl md:text-7xl font-black text-white mb-6 font-serif drop-shadow-xl text-center md:text-left">
+                        Guest <span className="text-sky-400">Reviews</span>
                     </h1>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+
+                    {/* Rating Badge */}
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 shadow-xl">
                         <div>
-                            <div className="flex items-center gap-3 mb-2">
+                            <div className="flex items-center gap-3 mb-1">
                                 <div className="flex gap-1">
                                     {[...Array(5)].map((_, i) => (
                                         <Star
                                             key={i}
-                                            size={24}
-                                            className="fill-amber-400 text-amber-400"
+                                            size={28}
+                                            className="fill-amber-400 text-amber-400 drop-shadow-sm"
                                         />
                                     ))}
                                 </div>
-                                <span className="text-3xl font-bold text-white">
-                  {averageRating}
-                </span>
+                                <span className="text-4xl font-black text-white drop-shadow-md">
+                                    {averageRating}
+                                </span>
                             </div>
-                            <p className="text-slate-300/80 text-lg">
+                            <p className="text-sky-100 font-medium text-lg">
                                 Based on {allReviews.length} verified reviews
                             </p>
                         </div>
                         <Link
                             to="/contact"
-                            className="bg-teal-400 text-slate-900 px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform duration-300 hover:shadow-lg hover:shadow-teal-400/30 text-center shadow-[0_0_20px_rgba(45,212,191,0.3)]"
+                            className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg text-center whitespace-nowrap"
                         >
                             Book Your Trip
                         </Link>
@@ -47,47 +59,48 @@ export function Reviews() {
             </section>
 
             {/* Reviews Grid */}
-            <section className="py-20 px-8">
+            <section className="py-20 px-8 bg-gradient-to-b from-white via-sky-50 to-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {allReviews.map((review, idx) => (
                             <div
                                 key={review.id}
-                                className="bg-slate-800/40 border border-white/10 rounded-3xl p-8 hover:border-teal-400/50 transition-all duration-300 flex flex-col hover:-translate-y-1 relative"
+                                // CARD THEME: White card with Sky Blue shadow
+                                className="bg-white border border-slate-100 rounded-[2rem] p-10 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-sky-200/50 hover:-translate-y-1 transition-all duration-300 flex flex-col relative group"
                                 data-aos="fade-up"
                                 data-aos-delay={idx * 100}
                             >
                                 {/* Quote Icon Background */}
-                                <Quote size={80} className="absolute top-6 right-8 text-white/5 rotate-180 pointer-events-none" />
+                                <Quote size={80} className="absolute top-8 right-8 text-sky-100 rotate-180 pointer-events-none group-hover:text-sky-200 transition-colors" />
 
                                 <div className="flex gap-1 mb-6">
                                     {[...Array(review.rating)].map((_, i) => (
                                         <Star
                                             key={i}
-                                            size={18}
+                                            size={20}
                                             className="fill-amber-400 text-amber-400"
                                         />
                                     ))}
                                 </div>
 
-                                <p className="text-slate-200 mb-8 italic flex-1 text-lg leading-relaxed relative z-10">
+                                <p className="text-slate-600 mb-8 italic flex-1 text-lg leading-relaxed relative z-10 font-medium">
                                     "{review.comment}"
                                 </p>
 
-                                <div className="flex items-center gap-4 pt-6 border-t border-white/10">
+                                <div className="flex items-center gap-5 pt-6 border-t border-slate-100">
                                     <img
                                         src={review.avatar}
                                         alt={review.name}
-                                        className="w-16 h-16 rounded-full border-2 border-teal-400/30"
+                                        className="w-16 h-16 rounded-full border-2 border-sky-100 object-cover shadow-sm"
                                     />
                                     <div>
                                         <div className="flex items-center gap-2">
-                                            <p className="font-bold text-white text-lg">{review.name}</p>
+                                            <p className="font-bold text-slate-900 text-lg">{review.name}</p>
                                             {review.verified && (
-                                                <CheckCircle size={16} className="text-teal-400" fill="currentColor" stroke="black" />
+                                                <CheckCircle size={18} className="text-sky-500" fill="currentColor" stroke="white" />
                                             )}
                                         </div>
-                                        <p className="text-slate-400 text-sm">{review.role}</p>
+                                        <p className="text-slate-400 text-sm font-semibold">{review.role}</p>
                                     </div>
                                 </div>
                             </div>
@@ -97,10 +110,10 @@ export function Reviews() {
             </section>
 
             {/* Stats Section */}
-            <section className="py-20 px-8 bg-slate-950 border-t border-white/5">
+            <section className="py-20 px-8 bg-white border-t border-slate-100">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-3xl font-black text-white mb-12 text-center font-serif">
-                        Why Our Guests Love Us
+                    <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-12 text-center font-serif">
+                        Why Our Guests <span className="text-sky-500">Love Us</span>
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
@@ -110,14 +123,14 @@ export function Reviews() {
                         ].map((item, idx) => (
                             <div
                                 key={idx}
-                                className="text-center p-10 bg-slate-900/50 border border-white/10 rounded-2xl hover:border-teal-400/30 transition-colors"
+                                className="text-center p-12 bg-sky-50 rounded-3xl border border-sky-100 hover:-translate-y-2 transition-transform duration-300"
                                 data-aos="zoom-in"
                                 data-aos-delay={idx * 100}
                             >
-                                <div className="text-5xl font-black text-teal-400 mb-2 font-serif">
+                                <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600 mb-4 font-serif">
                                     {item.stat}
                                 </div>
-                                <p className="text-slate-400 uppercase tracking-widest text-sm">{item.label}</p>
+                                <p className="text-slate-500 uppercase tracking-widest font-bold text-sm">{item.label}</p>
                             </div>
                         ))}
                     </div>
@@ -125,18 +138,22 @@ export function Reviews() {
             </section>
 
             {/* CTA */}
-            <section className="py-20 px-8">
-                <div className="max-w-4xl mx-auto text-center bg-gradient-to-r from-teal-900/20 to-slate-900/40 p-12 rounded-3xl border border-teal-500/20">
-                    <h2 className="text-4xl font-black text-white mb-6 font-serif">
+            <section className="py-20 px-8 bg-white">
+                <div className="max-w-5xl mx-auto text-center bg-gradient-to-r from-sky-500 to-blue-600 p-12 rounded-[3rem] shadow-2xl shadow-sky-500/30 relative overflow-hidden">
+                    {/* Background Pattern */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+                    <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-serif relative z-10">
                         Join Our Community of Happy Travelers
                     </h2>
-                    <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+                    <p className="text-sky-100 text-lg mb-10 max-w-2xl mx-auto relative z-10">
                         Experience the Ceylon Vista Tours difference. Book your adventure
                         today and become part of our success stories.
                     </p>
                     <Link
                         to="/contact"
-                        className="inline-block bg-teal-400 text-slate-900 px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300 hover:shadow-lg hover:shadow-teal-400/30"
+                        className="inline-block bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-lg relative z-10"
                     >
                         Plan Your Trip Now
                     </Link>
