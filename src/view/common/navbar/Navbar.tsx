@@ -8,7 +8,6 @@ export function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Change background when scrolling down
             setIsScrolled(window.scrollY > 50);
         };
 
@@ -31,34 +30,29 @@ export function Navbar() {
         <header
             className={`fixed top-0 w-full z-50 transition-all duration-300 ${
                 isScrolled
-                    // THEME: On scroll -> White background with shadow
-                    ? "bg-gray-300 backdrop-blur-md border-b border-sky-100 py-3 px-8 shadow-sm"
-                    // THEME: Top -> Transparent
-                    : "bg-transparent py-6 px-8"
+                    ? "bg-gray-300 backdrop-blur-md border-b border-sky-100 py-3 px-6 md:px-8 shadow-sm"
+                    : "bg-transparent py-6 px-6 md:px-8"
             }`}
         >
             <nav className="max-w-7xl mx-auto flex justify-between items-center">
                 {/* Logo */}
                 <Link
                     to="/"
-                    className={`text-2xl font-black tracking-tight transition-colors duration-300 ${
+                    className={`text-xl md:text-2xl font-black tracking-tight transition-colors duration-300 ${
                         isScrolled ? "text-blue-600" : "text-white"
                     } hover:text-sky-400`}
                 >
                     CEYLON <span className={isScrolled ? "text-sky-400" : "text-sky-200"}>VISTA</span>
                 </Link>
 
-                {/* Desktop Navigation */}
-                <ul className="hidden md:flex gap-8 list-none items-center">
+                <ul className="hidden lg:flex gap-8 list-none items-center">
                     {navLinks.map((link) => (
                         <li key={link.path}>
                             <Link
                                 to={link.path}
                                 className={`text-sm font-bold transition-all duration-300 ${
                                     isActive(link.path)
-                                        // Active state color
                                         ? "text-sky-400"
-                                        // Inactive state color (adapts to scroll)
                                         : isScrolled
                                             ? "text-slate-600 hover:text-sky-500"
                                             : "text-white/90 hover:text-sky-200"
@@ -70,24 +64,20 @@ export function Navbar() {
                     ))}
                 </ul>
 
-                {/* Book Button (Desktop) */}
                 <Link
                     to="/contact"
-                    className={`hidden md:inline-block px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-md ${
+                    className={`hidden lg:inline-block px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-md ${
                         isScrolled
-                            // Scrolled: Gradient Blue button
                             ? "bg-gradient-to-r from-sky-400 to-blue-600 text-white hover:shadow-sky-200"
-                            // Top: White glass button
                             : "bg-white text-blue-600 hover:bg-sky-50"
                     } hover:scale-105 hover:shadow-lg`}
                 >
                     Book a Trip
                 </Link>
 
-                {/* Mobile Menu Button */}
                 <button
                     onClick={() => setIsMobileOpen(!isMobileOpen)}
-                    className="md:hidden flex flex-col gap-1.5 justify-center w-6 h-6 z-50 relative"
+                    className="lg:hidden flex flex-col gap-1.5 justify-center w-6 h-6 z-50 relative"
                     aria-label="Toggle menu"
                 >
                     <span
@@ -107,14 +97,14 @@ export function Navbar() {
                     />
                 </button>
 
-                {/* Mobile Navigation Menu */}
+                {/* Mobile/Tablet Navigation Drawer */}
                 <div
-                    className={`absolute top-0 right-0 w-3/4 h-screen bg-white shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-24 px-6 gap-4 ${
+                    className={`absolute top-0 right-0 w-3/4 md:w-[400px] h-screen bg-white shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col pt-24 px-8 gap-4 ${
                         isMobileOpen ? "translate-x-0" : "translate-x-full"
                     }`}
                 >
-                    {/* Mobile Logo inside menu */}
-                    <div className="absolute top-6 left-6 text-xl font-black text-blue-600">
+                    {/* Drawer Logo */}
+                    <div className="absolute top-6 left-8 text-xl font-black text-blue-600">
                         CEYLON <span className="text-sky-400">VISTA</span>
                     </div>
 
@@ -147,10 +137,10 @@ export function Navbar() {
                     </div>
                 </div>
 
-                {/* Mobile Overlay (Darkens background when menu is open) */}
+                {/* Overlay */}
                 {isMobileOpen && (
                     <div
-                        className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[-1] md:hidden"
+                        className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[-1] lg:hidden"
                         onClick={() => setIsMobileOpen(false)}
                     />
                 )}
