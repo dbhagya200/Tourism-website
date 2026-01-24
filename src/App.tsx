@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
 import {HashRouter, Route, Routes, useLocation} from "react-router-dom";
+import {Loading} from "./view/common/loadingPage/Loading.tsx";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -20,10 +21,23 @@ export function ScrollToTop() {
 }
 
 function App() {
+    const [isLoading, setIsLoading] = useState(true);
     // Initialize animations
     useEffect(() => {
         AOS.init({ duration: 1000, once: true });
     }, []);
+
+    useEffect(() => {
+        // Simulate loading time (or replace with real data fetching)
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 2000); // Loads for 2 seconds
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading) {
+        return <Loading />;
+    }
 
     return (
         <HashRouter>
