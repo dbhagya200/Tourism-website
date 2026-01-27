@@ -41,7 +41,7 @@ export const featuredReviews = [
     }
 ];
 
-// Packages Page Data
+    // Packages Page Data
 export const packages = [
     {
         id: 1,

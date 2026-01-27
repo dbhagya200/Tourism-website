@@ -24,8 +24,36 @@ export function Contact() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
         setSubmitted(true);
+
+        // --- EMAIL LOGIC STARTS HERE ---
+
+        const recipientEmail = "info@ceylonvistatours.lk";
+        const subject = `Trip Inquiry: ${formData.destination || "General"} - ${formData.name}`;
+
+        // UPDATED: Cleaner Email Body Format
+        const bodyContent = `
+                Dear Ceylon Vista Team,
+                
+                I would like to inquire about a trip to Sri Lanka. Please find my details below:
+                
+                Name:  ${formData.name}
+                Email: ${formData.email}
+                Phone: ${formData.phone || "Not provided"}
+                
+                Interested In: ${formData.destination || "General Inquiry"}
+                
+                ${formData.message}
+                
+                ---------------------------------------
+                Sent via Ceylon Vista Website
+`;
+
+        const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+
+        window.location.href = mailtoLink;
+
+        // Reset form
         setTimeout(() => {
             setFormData({ name: "", email: "", phone: "", destination: "", message: "" });
             setSubmitted(false);
@@ -33,18 +61,15 @@ export function Contact() {
     };
 
     return (
-        // THEME: Light Background
         <main className="min-h-screen font-sans text-slate-800 bg-white">
 
             {/* Header / Hero Section */}
             <section
                 className="relative h-[100vh] flex items-center justify-center bg-cover bg-center bg-fixed"
                 style={{
-                    // Tea Plantation / Scenic View
                     backgroundImage: "url('https://www.lovesrilanka.org/wp-content/uploads/2019/09/key-destinations_1920x700-7.jpg')"
                 }}
             >
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-slate-900/40"></div>
 
                 <div className="max-w-7xl mx-auto text-center relative z-10 px-8 mt-16">
@@ -230,7 +255,7 @@ export function Contact() {
                                     {submitted ? (
                                         <>
                                             <span className="inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                            Sending...
+                                            Preparing Email...
                                         </>
                                     ) : (
                                         <>
@@ -242,7 +267,7 @@ export function Contact() {
 
                                 {submitted && (
                                     <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-600 text-center font-bold animate-fade-in">
-                                        Message sent successfully! We'll get back to you soon.
+                                        Opening your email client...
                                     </div>
                                 )}
                             </form>
