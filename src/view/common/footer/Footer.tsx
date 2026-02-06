@@ -134,7 +134,7 @@ export function Footer() {
                             <ul className="flex flex-row flex-wrap justify-center gap-6 lg:flex-col lg:gap-3">
                                 {[
                                     { to: "/", label: "Home" },
-                                    { to: "/packages", label: "Packages" },
+                                    // { to: "/packages", label: "Packages" },
                                     { to: "/reels", label: "Shorts" },
                                     { to: "/contact", label: "Contact" }
                                 ].map((link) => (

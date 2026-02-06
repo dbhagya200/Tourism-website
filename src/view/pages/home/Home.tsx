@@ -1,8 +1,23 @@
+import { useState } from "react";
+import { Play, ArrowRight, Star, MapPin, Eye, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Play, ArrowRight, Star, MapPin, Eye } from "lucide-react";
-import {  featuredReviews } from "../../../GlobalData.ts";
+import { featuredReviews, reels } from "../../../GlobalData.ts";
 
 export function Home() {
+    const [selectedReel, setSelectedReel] = useState<number | null>(null);
+    const getEmbedUrl = (url: string) => {
+        const videoId = url.split("/shorts/")[1]?.split("?")[0];
+        return `https://www.youtube.com/embed/${videoId}`;
+    };
+
+    const getThumbnailUrl = (url: string) => {
+        if (url.includes('youtube.com/shorts/')) {
+            const videoId = url.split('shorts/')[1]?.split('?')[0];
+            return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        }
+        return `https://img.youtube.com/vi/${url}/hqdefault.jpg`;
+    };
+
     return (
         <main className="bg-gradient-to-b from-white via-sky-50 to-white text-slate-800 font-sans min-h-screen">
 
@@ -51,40 +66,63 @@ export function Home() {
             {/* --- Reels Teaser Section --- */}
             <section className="py-16 px-6 md:px-12">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-8 max-w-7xl mx-auto">
-                    <div className="max-w-7xl mx-auto text-center ">
+                    <div className="max-w-7xl mx-auto text-center">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2 text-slate-900">
                             Travel <span className="text-sky-500">Shorts</span>
                         </h2>
                         <p className="text-slate-500 text-sm">Quick glimpses of the island life</p>
                     </div>
-                    <Link to="/reels" className="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600 hover:opacity-80 transition-opacity">
+                    <Link
+                        to="/reels"
+                        className="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600 hover:opacity-80 transition-opacity"
+                    >
                         View All Shorts <ArrowRight size={14} className="text-sky-600" />
                     </Link>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
-                    {[
-                        { id: 1, title: "Ella Views", url: "https://www.youtube.com/embed/pSj7jS9XNn0" },
-                        { id: 2, title: "Mirissa", url: "https://www.youtube.com/embed/j_N8YgK8Vyo" },
-                        { id: 3, title: "Safari", url: "https://www.youtube.com/embed/S_vTOnY_F_M" },
-                        { id: 4, title: "Nature", url: "https://www.youtube.com/embed/0SNoX_eF_L8" },
-                    ].map((reel) => (
-                        <div key={reel.id} className="relative aspect-[9/16] rounded-xl overflow-hidden group shadow-lg shadow-sky-100" data-aos="zoom-in">
-                            <iframe
-                                src={`${reel.url}?controls=0&modestbranding=1&rel=0&loop=1&mute=1&autoplay=0`}
-                                title={reel.title}
-                                className="w-full h-full object-cover pointer-events-none"
+                    {reels.slice(0, 4).map((reel, idx) => (
+                        <div
+                            key={reel.id}
+                            className="relative aspect-[9/16] rounded-xl overflow-hidden group shadow-lg shadow-sky-100 cursor-pointer"
+                            data-aos="zoom-in"
+                            data-aos-delay={idx * 100}
+                            onClick={() => setSelectedReel(idx)}
+                        >
+                            {/* Thumbnail Image */}
+                            <img
+                                src={getThumbnailUrl(reel.src)}
+                                alt={reel.title}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />
+
+                            {/* Gradient Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent opacity-50 group-hover:opacity-80 transition-all duration-300"></div>
 
-                            <Link to="/reels" className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div className="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-600 text-white rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition-transform border border-white/20">
+                            {/* Play Button */}
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="w-12 h-12 bg-gradient-to-br from-sky-400 to-blue-600 text-white rounded-full flex items-center justify-center shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-blue-500/50 border-2 border-white/30">
                                     <Play size={16} fill="currentColor" className="ml-1" />
                                 </div>
-                            </Link>
+                            </div>
 
-                            <div className="absolute bottom-3 left-3 right-3 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                                <span className="block text-center text-xs font-bold text-slate-800 bg-white/95 backdrop-blur-md py-1.5 rounded-lg shadow-sm border border-sky-100">
+                            {/* Badge */}
+                            <div className="absolute top-3 left-3">
+                                <span className="px-2 py-1 bg-sky-500 text-white text-xs font-bold rounded-full shadow-sm">
+                                    {reel.badge}
+                                </span>
+                            </div>
+
+                            {/* Location */}
+                            <div className="absolute top-3 right-3">
+                                <span className="px-2 py-1 bg-black/50 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+                                    📍 {reel.location.split(',')[0]}
+                                </span>
+                            </div>
+
+                            {/* Title */}
+                            <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 via-black/50 to-transparent transform translate-y-0 group-hover:translate-y-0 transition-transform duration-300">
+                                <span className="block text-sm font-bold text-white truncate drop-shadow-sm">
                                     {reel.title}
                                 </span>
                             </div>
@@ -93,57 +131,63 @@ export function Home() {
                 </div>
 
                 <div className="mt-8 text-center md:hidden">
-                    <Link to="/reels" className="inline-flex items-center gap-2 text-xs text-sky-600 font-bold uppercase tracking-wider">
+                    <Link
+                        to="/reels"
+                        className="inline-flex items-center gap-2 text-xs text-sky-600 font-bold uppercase tracking-wider"
+                    >
                         View Gallery <ArrowRight size={14} />
                     </Link>
                 </div>
             </section>
 
-            {/* --- Packages Teaser Section --- */}
-            {/*<section className="py-16 px-6 md:px-12 bg-white">*/}
-            {/*    <div className="max-w-7xl mx-auto text-center mb-10">*/}
-            {/*        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-3 text-slate-900">*/}
-            {/*            Popular <span className="text-sky-500">Destinations</span>*/}
-            {/*        </h2>*/}
-            {/*        <p className="text-slate-500 max-w-xl mx-auto text-base">*/}
-            {/*            Our most booked luxury experiences tailored for comfort and adventure.*/}
-            {/*        </p>*/}
-            {/*    </div>*/}
+            {/* --- Video Modal --- */}
+            {selectedReel !== null && (
+                <div
+                    className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4 backdrop-blur-sm"
+                    onClick={() => setSelectedReel(null)}
+                >
+                    <div
+                        className="w-full max-w-xl"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="flex justify-end mb-4">
+                            <button
+                                onClick={() => setSelectedReel(null)}
+                                className="text-white/80 hover:text-white transition-colors p-2 bg-white/10 hover:bg-white/20 rounded-full"
+                                aria-label="Close"
+                            >
+                                <X size={24} />
+                            </button>
+                        </div>
 
-            {/*    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">*/}
-            {/*        {featuredPackages.map((pkg, idx) => (*/}
-            {/*            <div key={pkg.id} className="bg-white rounded-[1.5rem] overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-sky-200/50 hover:-translate-y-2 transition-all duration-300 flex flex-col group border border-slate-100" data-aos="fade-up" data-aos-delay={idx * 100}>*/}
-            {/*                <div className="h-60 overflow-hidden relative">*/}
-            {/*                    <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />*/}
-            {/*                    <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-600 shadow-sm">*/}
-            {/*                        {pkg.duration}*/}
-            {/*                    </div>*/}
-            {/*                </div>*/}
-            {/*                <div className="p-6 flex flex-col flex-grow">*/}
-            {/*                    <h3 className="text-xl font-bold mb-2 font-serif text-slate-900 group-hover:text-sky-600 transition-colors">{pkg.title}</h3>*/}
-            {/*                    <div className="mt-auto pt-4 border-t border-slate-100">*/}
-            {/*                        <p className="text-[10px] text-slate-400 uppercase tracking-wide mb-1 font-semibold">Starting from</p>*/}
-            {/*                        <div className="flex justify-between items-end">*/}
-            {/*                            <p className="text-2xl font-black text-slate-800">{pkg.price}</p>*/}
-            {/*                            <Link*/}
-            {/*                                to="/packages"*/}
-            {/*                                className="bg-sky-50 text-sky-700 px-5 py-2 rounded-lg font-bold text-xs hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white transition-all hover:shadow-lg flex items-center gap-2"*/}
-            {/*                            >*/}
-            {/*                                View <ArrowRight size={14} />*/}
-            {/*                            </Link>*/}
-            {/*                        </div>*/}
-            {/*                    </div>*/}
-            {/*                </div>*/}
-            {/*            </div>*/}
-            {/*        ))}*/}
-            {/*    </div>*/}
+                        {/* Video Player */}
+                        <div className="aspect-video bg-gradient-to-b from-slate-900 via-gray-900 to-black rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10 border border-white/10 p-1">
+                            <iframe
+                                src={`${getEmbedUrl(reels[selectedReel].src)}?autoplay=1`}
+                                title={reels[selectedReel].title}
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                className="w-full h-full rounded-lg"
+                            />
+                        </div>
 
-            {/*    <div className="mt-12 text-center">*/}
-            {/*        <Link to="/packages" className="inline-flex items-center gap-2 border-2  border-blue-950 bg-amber-50-400 text-slate-600 px-8 py-3 rounded-full hover:border-sky-500 hover:text-sky-600 transition-colors font-bold uppercase tracking-wider text-xs">*/}
-            {/*            Explore All Packages*/}
-            {/*        </Link>*/}
-            {/*    </div>*/}
-            {/*</section>*/}
+                        {/* Video Details */}
+                        <div className="mt-6 bg-white p-6 rounded-2xl border border-slate-100 shadow-xl">
+                            <h2 className="text-2xl font-bold text-slate-900 mb-2 font-serif">
+                                {reels[selectedReel].title}
+                            </h2>
+                            <div className="flex items-center gap-2 text-slate-500 mb-4 text-sm font-medium">
+                                <MapPin size={16} className="text-sky-500" />
+                                {reels[selectedReel].location}
+                            </div>
+                            <p className="text-slate-600 leading-relaxed">
+                                {reels[selectedReel].description}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* --- Reviews Teaser Section --- */}
             <section className="py-20 px-6 md:px-12 relative overflow-hidden bg-gradient-to-br from-white via-sky-50 to-white">
@@ -190,6 +234,52 @@ export function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* --- Packages Teaser Section ---*/}
+            {/*<section className="py-16 px-6 md:px-12 bg-white">*/}
+            {/*    <div className="max-w-7xl mx-auto text-center mb-10">*/}
+            {/*        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-3 text-slate-900">*/}
+            {/*            Popular <span className="text-sky-500">Destinations</span>*/}
+            {/*        </h2>*/}
+            {/*        <p className="text-slate-500 max-w-xl mx-auto text-base">*/}
+            {/*            Our most booked luxury experiences tailored for comfort and adventure.*/}
+            {/*        </p>*/}
+            {/*    </div>*/}
+
+            {/*    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">*/}
+            {/*        {featuredPackages.map((pkg, idx) => (*/}
+            {/*            <div key={pkg.id} className="bg-white rounded-[1.5rem] overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-sky-200/50 hover:-translate-y-2 transition-all duration-300 flex flex-col group border border-slate-100" data-aos="fade-up" data-aos-delay={idx * 100}>*/}
+            {/*                <div className="h-60 overflow-hidden relative">*/}
+            {/*                    <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />*/}
+            {/*                    <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-600 shadow-sm">*/}
+            {/*                        {pkg.duration}*/}
+            {/*                    </div>*/}
+            {/*                </div>*/}
+            {/*                <div className="p-6 flex flex-col flex-grow">*/}
+            {/*                    <h3 className="text-xl font-bold mb-2 font-serif text-slate-900 group-hover:text-sky-600 transition-colors">{pkg.title}</h3>*/}
+            {/*                    <div className="mt-auto pt-4 border-t border-slate-100">*/}
+            {/*                        <p className="text-[10px] text-slate-400 uppercase tracking-wide mb-1 font-semibold">Starting from</p>*/}
+            {/*                        <div className="flex justify-between items-end">*/}
+            {/*                            <p className="text-2xl font-black text-slate-800">{pkg.price}</p>*/}
+            {/*                            <Link*/}
+            {/*                                to="/packages"*/}
+            {/*                                className="bg-sky-50 text-sky-700 px-5 py-2 rounded-lg font-bold text-xs hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white transition-all hover:shadow-lg flex items-center gap-2"*/}
+            {/*                            >*/}
+            {/*                                View <ArrowRight size={14} />*/}
+            {/*                            </Link>*/}
+            {/*                        </div>*/}
+            {/*                    </div>*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+
+            {/*    <div className="mt-12 text-center">*/}
+            {/*        <Link to="/packages" className="inline-flex items-center gap-2 border-2  border-blue-950 bg-amber-50-400 text-slate-600 px-8 py-3 rounded-full hover:border-sky-500 hover:text-sky-600 transition-colors font-bold uppercase tracking-wider text-xs">*/}
+            {/*            Explore All Packages*/}
+            {/*        </Link>*/}
+            {/*    </div>*/}
+            {/*</section>*/}
 
             {/* --- Gallery Teaser Section --- */}
             <section className="py-20 px-6 md:px-12 text-center bg-white">
