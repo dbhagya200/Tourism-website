@@ -5,7 +5,7 @@ import { reels } from "../../../GlobalData.ts";
 
 export function TravelReels() {
     const [selectedReel, setSelectedReel] = useState<number | null>(null);
-    const getEmbedUrl = (url) => {
+    const getEmbedUrl = (url: string) => {
         const videoId = url.split("/shorts/")[1]?.split("?")[0]; // Extracts 'agHPq_6vSCY'
         return `https://www.youtube.com/embed/${videoId}`;
     };
