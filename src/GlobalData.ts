@@ -1,5 +1,12 @@
-import { Mail, Phone, MapPin,Facebook,
-    Instagram, Linkedin, MessageCircle, } from "lucide-react";
+import {
+    Mail, Phone, MapPin, Facebook,
+    Instagram, MessageCircle,
+    Youtube, MessageSquare, Globe,
+    Star, Send
+} from "lucide-react";
+import {TiktokIcon} from "./view/common/footer/Footer.tsx";
+
+
 // Home Page Data
 export const featuredPackages = [
     {
@@ -25,7 +32,6 @@ export const featuredPackages = [
     }
 ];
 
-
 export const featuredReviews = [
     {
         id: 1,
@@ -41,7 +47,7 @@ export const featuredReviews = [
     }
 ];
 
-    // Packages Page Data
+// Packages Page Data
 export const packages = [
     {
         id: 1,
@@ -147,92 +153,101 @@ export const packages = [
     },
 ];
 
-//Travel Reels Page Data
-
+// Travel Reels Page Data
 export const reels = [
     {
         id: 1,
         title: "Ella Adventures",
         location: "Ella, Central Highlands",
         badge: "Watch",
-        src: "https://www.youtube.com/embed/pSj7jS9XNn0?controls=1&modestbranding=1&rel=0",
-        thumbnail: "https://img.youtube.com/vi/pSj7jS9XNn0/hqdefault.jpg",
-        description:
-            "Explore the misty mountains and tea plantations of Ella. Experience Little Adam's Peak trek and stunning viewpoints.",
+        src: "https://youtube.com/shorts/agHPq_6vSCY?si=6SJ0N1dSI4KM0it8",
+        thumbnail: "https://img.youtube.com/vi/agHPq_6vSCY/hqdefault.jpg",
+        description: "Explore the misty mountains and tea plantations of Ella. Experience Little Adam's Peak trek and stunning viewpoints.",
     },
     {
         id: 2,
         title: "Mirissa Beach Paradise",
         location: "Mirissa, South Coast",
         badge: "Trending",
-        src: "https://www.youtube.com/embed/j_N8YgK8Vyo?controls=1&modestbranding=1&rel=0",
-        thumbnail: "https://img.youtube.com/vi/j_N8YgK8Vyo/hqdefault.jpg",
-        description:
-            "Pristine beaches and whale watching adventures. Watch the sunset from our luxury beach resort.",
+        src: "https://youtube.com/shorts/f0IoX3_jv2w?si=rHkxX98Iz6M8x5k1",
+        thumbnail: "https://img.youtube.com/vi/f0IoX3_jv2w/hqdefault.jpg",
+        description: "Pristine beaches and whale watching adventures. Watch the sunset from our luxury beach resort.",
     },
     {
         id: 3,
         title: "Safari Wilderness",
         location: "Yala National Park",
         badge: "Adventure",
-        src: "https://www.youtube.com/embed/S_vTOnY_F_M?controls=1&modestbranding=1&rel=0",
-        thumbnail: "https://img.youtube.com/vi/S_vTOnY_F_M/hqdefault.jpg",
-        description:
-            "Encounter Sri Lanka's incredible wildlife including leopards, elephants, and rare bird species.",
+        src: "https://youtube.com/shorts/EcV1XfP27eA?si=HsxxtXGaHJsuOnIN",
+        thumbnail: "https://img.youtube.com/vi/EcV1XfP27eA/hqdefault.jpg",
+        description: "Encounter Sri Lanka's incredible wildlife including leopards, elephants, and rare bird species.",
     },
     {
         id: 4,
         title: "Nature Beauty",
         location: "Sigiriya & Dambulla",
         badge: "Nature",
-        src: "https://www.youtube.com/embed/0SNoX_eF_L8?controls=1&modestbranding=1&rel=0",
-        thumbnail: "https://img.youtube.com/vi/0SNoX_eF_L8/hqdefault.jpg",
-        description:
-            "Ancient temples, massive rock fortresses, and breathtaking natural landscapes of central Sri Lanka.",
+        src: "https://youtube.com/shorts/jo9fiBjLcqQ?si=qOnPr9FbgGOChAf9",
+        thumbnail: "https://img.youtube.com/vi/jo9fiBjLcqQ/hqdefault.jpg",
+        description: "Ancient temples, massive rock fortresses, and breathtaking natural landscapes of central Sri Lanka.",
     },
     {
         id: 5,
         title: "Tea Plantation Tour",
         location: "Nuwara Eliya",
         badge: "Cultural",
-        src: "https://www.youtube.com/embed/pSj7jS9XNn0?controls=1&modestbranding=1&rel=0",
-        thumbnail: "https://img.youtube.com/vi/pSj7jS9XNn0/hqdefault.jpg",
-        description:
-            "Journey through lush tea gardens, meet local tea pickers, and taste the world-famous Ceylon tea.",
+        src: "https://youtube.com/shorts/E3-fJx4egwE?si=hA7szN1AD6xdq-OT",
+        thumbnail: "https://img.youtube.com/vi/E3-fJx4egwE/hqdefault.jpg",
+        description: "Journey through lush tea gardens, meet local tea pickers, and taste the world-famous Ceylon tea.",
     },
     {
         id: 6,
         title: "Sunset at Lighthouse",
         location: "Galle Face",
         badge: "Romantic",
-        src: "https://www.youtube.com/embed/j_N8YgK8Vyo?controls=1&modestbranding=1&rel=0",
-        thumbnail: "https://img.youtube.com/vi/j_N8YgK8Vyo/hqdefault.jpg",
-        description:
-            "Experience magical sunsets from the iconic lighthouse with champagne and ocean views.",
+        src: "https://youtube.com/shorts/Npt_og3dxPY?si=MHgX8dA9Fn_avtDM",
+        thumbnail: "https://img.youtube.com/vi/Npt_og3dxPY/hqdefault.jpg",
+        description: "Experience magical sunsets from the iconic lighthouse with champagne and ocean views.",
     },
     {
         id: 7,
         title: "Water Sports Adventure",
         location: "Arugam Bay",
         badge: "Action",
-        src: "https://www.youtube.com/embed/S_vTOnY_F_M?controls=1&modestbranding=1&rel=0",
-        thumbnail: "https://img.youtube.com/vi/S_vTOnY_F_M/hqdefault.jpg",
-        description:
-            "Surfing, diving, and water sports in one of Asia's most vibrant beach towns.",
+        src: "https://youtube.com/shorts/DHkAcCvxKqA?si=eBnhrbOfTnq_1Xc9",
+        thumbnail: "https://img.youtube.com/vi/DHkAcCvxKqA/hqdefault.jpg",
+        description: "Surfing, diving, and water sports in one of Asia's most vibrant beach towns.",
     },
     {
         id: 8,
         title: "Colonial Colombo",
         location: "Colombo City",
         badge: "Cultural",
-        src: "https://www.youtube.com/embed/0SNoX_eF_L8?controls=1&modestbranding=1&rel=0",
-        thumbnail: "https://img.youtube.com/vi/0SNoX_eF_L8/hqdefault.jpg",
-        description:
-            "Discover the bustling capital with its colonial architecture, modern shopping, and vibrant nightlife.",
+        src: "https://youtube.com/shorts/5oyQkgnsrcs?si=xcpVB-SKdvKTMFm5",
+        thumbnail: "https://img.youtube.com/vi/5oyQkgnsrcs/hqdefault.jpg",
+        description: "Discover the bustling capital with its colonial architecture, modern shopping, and vibrant nightlife.",
     },
-];
+    {
+        id: 9,
+        title: "Temple Exploration",
+        location: "Kandy",
+        badge: "Cultural",
+        src: "https://youtube.com/shorts/ISlGbWMoYfU?si=xA9aMEEhVnOWGNjp",
+        thumbnail: "https://img.youtube.com/vi/ISlGbWMoYfU/hqdefault.jpg",
+        description: "Visit sacred temples and experience traditional Sri Lankan culture in the hill capital.",
+    },
+    {
+        id: 10,
+        title: "Beach Relaxation",
+        location: "Bentota",
+        badge: "Relax",
+        src: "https://youtube.com/shorts/HoJxzN3Y3xQ?si=rtVbwCxaiJlMTrRS",
+        thumbnail: "https://img.youtube.com/vi/HoJxzN3Y3xQ/hqdefault.jpg",
+        description: "Relax on golden sandy beaches and enjoy water sports in the coastal paradise of Bentota.",
+    },
+]
 
-//Reviews Page Data
+// Reviews Page Data
 export const allReviews = [
     {
         id: 1,
@@ -348,24 +363,24 @@ export const galleryItems = [
     },
 ];
 
-//Contact Page Data
+// Contact Page Data
 export const contactInfo = [
     {
         icon: Phone,
         title: "Phone",
-        value: "+94 77 123 4567",
+        value: "+94 76 431 0628",
         detail: "Available 24/7",
     },
     {
         icon: Mail,
         title: "Email",
-        value: "info@ceylonvistatours.lk",
+        value: "ceylonvisittours@gmail.com",
         detail: "Response within 2 hours",
     },
     {
         icon: MapPin,
         title: "Office",
-        value: "Colombo 07, Sri Lanka",
+        value: "No 84/2, Havelock Rd, Galle 80000",
         detail: "Visit us anytime",
     },
 ];
@@ -374,21 +389,61 @@ export const socialLinks = [
     {
         name: "Facebook",
         icon: Facebook,
-        href: "https://facebook.com",
+        href: "https://www.facebook.com/share/1C8r22fs8y/?mibextid=wwXIfr",
+        color: "hover:bg-blue-600",
     },
     {
         name: "Instagram",
         icon: Instagram,
-        href: "https://instagram.com",
+        href: "https://www.instagram.com/ceylonvisittourssrilanka?igsh=MTJ0MjNtYTIweXlseA%3D%3D&utm_source=qr",
+        color: "hover:bg-pink-600",
+    },
+    {
+        name: "TikTok",
+        icon: TiktokIcon,
+        href: "https://www.tiktok.com/@ceylonvisittours?_r=1&_t=ZS-93dQ65dxUTH",
+        color: "hover:bg-gray-900",
+    },
+    {
+        name: "YouTube",
+        icon: Youtube,
+        href: "https://youtube.com/@ceylonvisittours?si=v3X1aFEAW88jqcze",
+        color: "hover:bg-red-600",
+    },
+    {
+        name: "Google",
+        icon: Star,
+        href: "https://share.google/IrlqKkU39u7eX2QxY",
+        color: "hover:bg-green-600",
+    },
+    {
+        name: "TripAdvisor",
+        icon: Globe,
+        href: "https://www.tripadvisor.co.uk/Attraction_Review-g297896-d27698089-Reviews-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html",
+        color: "hover:bg-emerald-600",
     },
     {
         name: "WhatsApp",
         icon: MessageCircle,
-        href: "https://wa.me/94771234567",
+        href: "https://wa.me/message/RUNTC5D42W2QI1",
+        color: "hover:bg-green-500",
     },
     {
-        name: "LinkedIn",
-        icon: Linkedin,
-        href: "https://linkedin.com",
+        name: "WeChat",
+        icon: MessageSquare,
+        href: "weixin://dl/chat?wxid_mdvgqxr7r9jr12",
+        color: "hover:bg-green-400",
     },
+    {
+        name: "Telegram",
+        icon: Send,
+        href: "https://t.me/ceylonvisittourssrilanka",
+        color: "hover:bg-blue-500",
+    },
+    // {
+    //   name: "LinkedIn",
+    //   icon: Linkedin,
+    //   href: "https://linkedin.com",
+    //   color: "hover:bg-blue-700",
+    // },
 ];

@@ -5,6 +5,10 @@ import { reels } from "../../../GlobalData.ts";
 
 export function TravelReels() {
     const [selectedReel, setSelectedReel] = useState<number | null>(null);
+    const getEmbedUrl = (url) => {
+        const videoId = url.split("/shorts/")[1]?.split("?")[0]; // Extracts 'agHPq_6vSCY'
+        return `https://www.youtube.com/embed/${videoId}`;
+    };
 
     return (
         // THEME: Light background for the main content
@@ -42,7 +46,7 @@ export function TravelReels() {
                     onClick={() => setSelectedReel(null)}
                 >
                     <div
-                        className="w-full max-w-5xl"
+                        className="w-full max-w-xl"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="flex justify-end mb-4">
@@ -56,14 +60,14 @@ export function TravelReels() {
                         </div>
 
                         {/* Video Player */}
-                        <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10">
+                        <div className="aspect-video bg-gradient-to-b from-slate-900 via-gray-900 to-black rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10 border border-white/10 p-1">
                             <iframe
-                                src={`${reels[selectedReel].src}&autoplay=1`}
+                                src={`${getEmbedUrl(reels[selectedReel].src)}?autoplay=1`}
                                 title={reels[selectedReel].title}
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
-                                className="w-full h-full"
+                                className="w-full h-full rounded-lg"
                             />
                         </div>
 

@@ -131,7 +131,7 @@ export function Contact() {
                             <div>
                                 <h3 className="font-bold text-slate-900 mb-6 text-lg">Follow Our Journey</h3>
 
-                                <div className="flex gap-4">
+                                <div className="flex gap-4 flex-wrap justify-center lg:justify-start w-1/2">
                                     {socialLinks.map((social) => {
                                         const Icon = social.icon;
                                         return (
@@ -150,9 +150,9 @@ export function Contact() {
                                             </a>
                                         );
                                     })}
+                                 </div>
                                 </div>
                             </div>
-                        </div>
 
                         {/* Contact Form Column */}
                         <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl shadow-slate-200 border border-slate-100" data-aos="fade-left">
@@ -201,7 +201,7 @@ export function Contact() {
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleChange}
-                                        placeholder="+1 (555) 123-4567"
+                                        placeholder="+94 12 345 6789"
                                         className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:bg-white focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 focus:outline-none transition-all"
                                     />
                                 </div>

@@ -58,7 +58,7 @@ export function Packages() {
 
             {/* --- HERO SECTION --- */}
             <section
-                className="relative h-[60vh] flex items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed"
+                className="relative h-[100vh] flex items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed"
                 style={{
                     backgroundImage: "url('https://www.lovesrilanka.org/wp-content/uploads/2019/09/key-destinations_1920x700-10.jpg')"
                 }}

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Play, ArrowRight, Star, MapPin, Eye } from "lucide-react";
-import { featuredPackages, featuredReviews } from "../../../GlobalData.ts";
+import {  featuredReviews } from "../../../GlobalData.ts";
 
 export function Home() {
     return (
@@ -39,7 +39,7 @@ export function Home() {
                             Watch Stories
                         </Link>
                         <Link
-                            to="/packages"
+                            to="/"
                             className="bg-gradient-to-r from-sky-400 to-blue-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 hover:shadow-lg hover:shadow-sky-500/40 transition-all duration-300 border border-white/10 text-sm md:text-base"
                         >
                             Explore Packages
@@ -100,50 +100,50 @@ export function Home() {
             </section>
 
             {/* --- Packages Teaser Section --- */}
-            <section className="py-16 px-6 md:px-12 bg-white">
-                <div className="max-w-7xl mx-auto text-center mb-10">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-3 text-slate-900">
-                        Popular <span className="text-sky-500">Destinations</span>
-                    </h2>
-                    <p className="text-slate-500 max-w-xl mx-auto text-base">
-                        Our most booked luxury experiences tailored for comfort and adventure.
-                    </p>
-                </div>
+            {/*<section className="py-16 px-6 md:px-12 bg-white">*/}
+            {/*    <div className="max-w-7xl mx-auto text-center mb-10">*/}
+            {/*        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-3 text-slate-900">*/}
+            {/*            Popular <span className="text-sky-500">Destinations</span>*/}
+            {/*        </h2>*/}
+            {/*        <p className="text-slate-500 max-w-xl mx-auto text-base">*/}
+            {/*            Our most booked luxury experiences tailored for comfort and adventure.*/}
+            {/*        </p>*/}
+            {/*    </div>*/}
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-                    {featuredPackages.map((pkg, idx) => (
-                        <div key={pkg.id} className="bg-white rounded-[1.5rem] overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-sky-200/50 hover:-translate-y-2 transition-all duration-300 flex flex-col group border border-slate-100" data-aos="fade-up" data-aos-delay={idx * 100}>
-                            <div className="h-60 overflow-hidden relative">
-                                <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-600 shadow-sm">
-                                    {pkg.duration}
-                                </div>
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-xl font-bold mb-2 font-serif text-slate-900 group-hover:text-sky-600 transition-colors">{pkg.title}</h3>
-                                <div className="mt-auto pt-4 border-t border-slate-100">
-                                    <p className="text-[10px] text-slate-400 uppercase tracking-wide mb-1 font-semibold">Starting from</p>
-                                    <div className="flex justify-between items-end">
-                                        <p className="text-2xl font-black text-slate-800">{pkg.price}</p>
-                                        <Link
-                                            to="/packages"
-                                            className="bg-sky-50 text-sky-700 px-5 py-2 rounded-lg font-bold text-xs hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white transition-all hover:shadow-lg flex items-center gap-2"
-                                        >
-                                            View <ArrowRight size={14} />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+            {/*    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">*/}
+            {/*        {featuredPackages.map((pkg, idx) => (*/}
+            {/*            <div key={pkg.id} className="bg-white rounded-[1.5rem] overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-sky-200/50 hover:-translate-y-2 transition-all duration-300 flex flex-col group border border-slate-100" data-aos="fade-up" data-aos-delay={idx * 100}>*/}
+            {/*                <div className="h-60 overflow-hidden relative">*/}
+            {/*                    <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />*/}
+            {/*                    <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-600 shadow-sm">*/}
+            {/*                        {pkg.duration}*/}
+            {/*                    </div>*/}
+            {/*                </div>*/}
+            {/*                <div className="p-6 flex flex-col flex-grow">*/}
+            {/*                    <h3 className="text-xl font-bold mb-2 font-serif text-slate-900 group-hover:text-sky-600 transition-colors">{pkg.title}</h3>*/}
+            {/*                    <div className="mt-auto pt-4 border-t border-slate-100">*/}
+            {/*                        <p className="text-[10px] text-slate-400 uppercase tracking-wide mb-1 font-semibold">Starting from</p>*/}
+            {/*                        <div className="flex justify-between items-end">*/}
+            {/*                            <p className="text-2xl font-black text-slate-800">{pkg.price}</p>*/}
+            {/*                            <Link*/}
+            {/*                                to="/packages"*/}
+            {/*                                className="bg-sky-50 text-sky-700 px-5 py-2 rounded-lg font-bold text-xs hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white transition-all hover:shadow-lg flex items-center gap-2"*/}
+            {/*                            >*/}
+            {/*                                View <ArrowRight size={14} />*/}
+            {/*                            </Link>*/}
+            {/*                        </div>*/}
+            {/*                    </div>*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
 
-                <div className="mt-12 text-center">
-                    <Link to="/packages" className="inline-flex items-center gap-2 border-2  border-blue-950 bg-amber-50-400 text-slate-600 px-8 py-3 rounded-full hover:border-sky-500 hover:text-sky-600 transition-colors font-bold uppercase tracking-wider text-xs">
-                        Explore All Packages
-                    </Link>
-                </div>
-            </section>
+            {/*    <div className="mt-12 text-center">*/}
+            {/*        <Link to="/packages" className="inline-flex items-center gap-2 border-2  border-blue-950 bg-amber-50-400 text-slate-600 px-8 py-3 rounded-full hover:border-sky-500 hover:text-sky-600 transition-colors font-bold uppercase tracking-wider text-xs">*/}
+            {/*            Explore All Packages*/}
+            {/*        </Link>*/}
+            {/*    </div>*/}
+            {/*</section>*/}
 
             {/* --- Reviews Teaser Section --- */}
             <section className="py-20 px-6 md:px-12 relative overflow-hidden bg-gradient-to-br from-white via-sky-50 to-white">
