@@ -64,7 +64,7 @@ export function Packages() {
                 }}
             >
                 <div className="absolute inset-0 bg-slate-900/50"></div>
-                <div className="max-w-7xl mx-auto text-center relative z-10 px-4 mt-16">
+                <div className="max-w-7xl mx-auto text-center relative z-10 px-4 mt-16" data-aos="zoom-out">
                     <p className="text-sky-300 font-bold uppercase tracking-wider mb-2 text-xs md:text-sm drop-shadow-md">
                         Explore the Island
                     </p>

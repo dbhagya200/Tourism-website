@@ -22,7 +22,7 @@ export function Reviews() {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-slate-900/40"></div>
 
-                <div className="max-w-7xl mx-auto w-full px-8 relative z-10 mt-20">
+                <div className="max-w-7xl mx-auto w-full px-8 relative z-10 mt-20" data-aos="zoom-out">
                     <h1 className="text-4xl md:text-7xl font-black text-white mb-6 font-serif drop-shadow-xl text-center md:text-left">
                         Guest <span className="text-sky-400">Reviews</span>
                     </h1>

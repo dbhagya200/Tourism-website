@@ -16,7 +16,7 @@ export function TravelReels() {
 
             {/* Header / Hero Section with Background Image */}
             <section
-                className="relative h-[100vh] flex items-center justify-center bg-cover bg-center bg-fixed"
+                className="relative h-[100vh] flex items-center justify-center bg-cover bg-center bg-fixed "
                 style={{
                     // Nine Arches Bridge / Train Image
                     backgroundImage: "url('https://www.lovesrilanka.org/wp-content/uploads/2019/09/key-destinations_1920x700-3.jpg')"
@@ -25,7 +25,7 @@ export function TravelReels() {
                 {/* Overlay for text readability */}
                 <div className="absolute inset-0 bg-slate-900/40"></div>
 
-                <div className="max-w-7xl mx-auto text-center relative z-10 px-8 mt-16">
+                <div className="max-w-7xl mx-auto text-center relative z-10 px-8 mt-16" data-aos="zoom-out">
                     <p className="text-sky-300 font-bold uppercase tracking-wider mb-3 text-sm drop-shadow-md">
                         Cinematic Journeys
                     </p>

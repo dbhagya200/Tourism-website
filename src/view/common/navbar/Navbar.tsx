@@ -42,7 +42,7 @@ export function Navbar() {
                         isScrolled ? "text-blue-600" : "text-white"
                     } hover:text-sky-400`}
                 >
-                    CEYLON <span className={isScrolled ? "text-sky-400" : "text-sky-200"}>VISTA</span>
+                    CEYLON - <span className={isScrolled ? "text-sky-400" : "text-sky-200"}>VISIT TOURS</span>
                 </Link>
 
                 <ul className="hidden lg:flex gap-8 list-none items-center">
