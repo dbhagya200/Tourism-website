@@ -404,7 +404,7 @@ export const contactInfo = [
     {
         icon: MapPin,
         title: "Office",
-        value: "No 84/2, Havelock Rd, Galle 80000",
+        value: "No 84/2, Havelock Rd, Galle, Sri Lanka",
         detail: "Visit us anytime",
     },
 ];
