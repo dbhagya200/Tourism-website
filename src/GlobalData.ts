@@ -1,5 +1,5 @@
 import {
-    Mail, Phone, MapPin, Facebook,
+    Mail, MapPin, Facebook,
     Instagram, MessageCircle,
     Youtube, MessageSquare, Globe,
     Star, Send
@@ -383,9 +383,15 @@ export const galleryItems = [
 
 // Contact Page Data
 export const contactInfo = [
+    // {
+    //     icon: Phone,
+    //     title: "Phone",
+    //     value: "+94 76 431 0628",
+    //     detail: "Available 24/7",
+    // },
     {
-        icon: Phone,
-        title: "Phone",
+        icon: MessageCircle,
+        title: "WhatsApp",
         value: "+94 76 431 0628",
         detail: "Available 24/7",
     },
