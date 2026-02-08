@@ -3,15 +3,8 @@ import {
     Phone,
     Mail,
     MapPin,
-    Facebook,
-    Instagram,
-    MessageCircle,
-    Youtube,
-    MessageSquare,
-    Globe,
-    Star,
-    Send
 } from "lucide-react";
+import {socialLinks} from "../../../GlobalData.ts";
 
 // TikTok SVG Logo Component
 export function TiktokIcon() {
@@ -49,74 +42,19 @@ export function Footer() {
                             Discover hidden gems with unmatched luxury and local expertise across Sri Lanka.
                         </p>
 
-                        {/* Social Icons - All Platforms */}
+                        {/* Social Icons - All Platforms with Original Colors */}
                         <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                            {[
-                                {
-                                    icon: Facebook,
-                                    href: "https://www.facebook.com/share/1C8r22fs8y/?mibextid=wwXIfr",
-                                    label: "Facebook",
-                                    color: "hover:bg-blue-600 hover:border-blue-600"
-                                },
-                                {
-                                    icon: Instagram,
-                                    href: "https://www.instagram.com/ceylonvisittourssrilanka?igsh=MTJ0MjNtYTIweXlseA%3D%3D&utm_source=qr",
-                                    label: "Instagram",
-                                    color: "hover:bg-pink-600 hover:border-pink-600"
-                                },
-                                {
-                                    icon: TiktokIcon,
-                                    href: "https://www.tiktok.com/@ceylonvisittours?_r=1&_t=ZS-93dQ65dxUTH",
-                                    label: "TikTok",
-                                    color: "hover:bg-black hover:border-black"
-                                },
-                                {
-                                    icon: Youtube,
-                                    href: "https://youtube.com/@ceylonvisittours?si=v3X1aFEAW88jqcze",
-                                    label: "YouTube",
-                                    color: "hover:bg-red-600 hover:border-red-600"
-                                },
-                                {
-                                    icon: Star,
-                                    href: "https://share.google/IrlqKkU39u7eX2QxY",
-                                    label: "Google",
-                                    color: "hover:bg-green-600 hover:border-green-600"
-                                },
-                                {
-                                    icon: Globe,
-                                    href: "https://www.tripadvisor.co.uk/Attraction_Review-g297896-d27698089-Reviews-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html",
-                                    label: "TripAdvisor",
-                                    color: "hover:bg-emerald-600 hover:border-emerald-600"
-                                },
-                                {
-                                    icon: MessageCircle,
-                                    href: "https://wa.me/message/RUNTC5D42W2QI1",
-                                    label: "WhatsApp",
-                                    color: "hover:bg-green-500 hover:border-green-500"
-                                },
-                                {
-                                    icon: MessageSquare,
-                                    href: "weixin://dl/chat?wxid_mdvgqxr7r9jr12",
-                                    label: "WeChat",
-                                    color: "hover:bg-green-400 hover:border-green-400"
-                                },
-                                {
-                                    icon: Send,
-                                    href: "https://t.me/ceylonvisittourssrilanka",
-                                    label: "Telegram",
-                                    color: "hover:bg-blue-500 hover:border-blue-500"
-                                }
-                            ].map((social, idx) => (
+                            {socialLinks.map((social, idx) => (
                                 <a
                                     key={idx}
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-sky-100 ${social.color} hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-lg`}
+                                    className={`w-9 h-9 ${social.bgColor} ${social.hoverBg} ${social.iconColor} border border-white/20 rounded-full flex items-center justify-center hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl`}
                                     aria-label={social.label}
                                     title={social.label}
                                 >
-                                    <social.icon size={18} />
+                                    <social.icon size={16} />
                                 </a>
                             ))}
                         </div>

@@ -136,17 +136,17 @@ export function Contact() {
                                         const Icon = social.icon;
                                         return (
                                             <a
-                                                key={social.name}
+                                                key={social.label}
                                                 href={social.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                aria-label={social.name}
-                                                className="w-12 h-12 bg-white border border-slate-200 rounded-xl
-                                                    flex items-center justify-center text-slate-400
-                                                    hover:bg-gradient-to-br hover:from-sky-400 hover:to-blue-600 hover:text-white hover:border-transparent
-                                                    transition-all duration-300 hover:shadow-lg hover:shadow-sky-300/50"
+                                                aria-label={social.label}
+                                                className={`w-10 h-10 ${social.bgColor} ${social.hoverBg} ${social.iconColor} rounded-xl
+                                                    flex items-center justify-center 
+                                                    hover:bg-gradient-to-br hover:border-transparent
+                                                    transition-all duration-300 hover:shadow-lg hover:shadow-sky-300/50`}
                                             >
-                                                <Icon size={20} />
+                                                <Icon size={18} />
                                             </a>
                                         );
                                     })}

@@ -405,58 +405,76 @@ export const contactInfo = [
 
 export const socialLinks = [
     {
-        name: "Facebook",
         icon: Facebook,
         href: "https://www.facebook.com/share/1C8r22fs8y/?mibextid=wwXIfr",
-        color: "hover:bg-blue-600",
+        label: "Facebook",
+        bgColor: "bg-[#166FE5]",
+        hoverBg: "hover:bg-[#1877F2]",
+        iconColor: "text-white"
     },
     {
-        name: "Instagram",
         icon: Instagram,
         href: "https://www.instagram.com/ceylonvisittourssrilanka?igsh=MTJ0MjNtYTIweXlseA%3D%3D&utm_source=qr",
-        color: "hover:bg-pink-600",
+        label: "Instagram",
+        bgColor: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45]",
+        hoverBg: "hover:opacity-90",
+        iconColor: "text-white"
     },
     {
-        name: "TikTok",
         icon: TiktokIcon,
         href: "https://www.tiktok.com/@ceylonvisittours?_r=1&_t=ZS-93dQ65dxUTH",
-        color: "hover:bg-gray-900",
+        label: "TikTok",
+        bgColor: "bg-black",
+        hoverBg: "hover:bg-gray-900",
+        iconColor: "text-white"
     },
     {
-        name: "YouTube",
         icon: Youtube,
         href: "https://youtube.com/@ceylonvisittours?si=v3X1aFEAW88jqcze",
-        color: "hover:bg-red-600",
+        label: "YouTube",
+        bgColor: "bg-[#CC0000]",
+        hoverBg: "hover:bg-[#FF0000]",
+        iconColor: "text-white"
     },
     {
-        name: "Google",
         icon: Star,
         href: "https://share.google/IrlqKkU39u7eX2QxY",
-        color: "hover:bg-green-600",
+        label: "Google",
+        bgColor: "bg-[#2E944B]",
+        hoverBg: "hover:bg-[#34A853]",
+        iconColor: "text-white"
     },
     {
-        name: "TripAdvisor",
         icon: Globe,
         href: "https://www.tripadvisor.co.uk/Attraction_Review-g297896-d27698089-Reviews-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html",
-        color: "hover:bg-emerald-600",
+        label: "TripAdvisor",
+        bgColor: "bg-[#2DC691]",
+        hoverBg: "hover:bg-[#34E0A1]",
+        iconColor: "text-white"
     },
     {
-        name: "WhatsApp",
         icon: MessageCircle,
         href: "https://wa.me/message/RUNTC5D42W2QI1",
-        color: "hover:bg-green-500",
+        label: "WhatsApp",
+        bgColor: "bg-[#22C55E]",
+        hoverBg: "hover:bg-[#25D366]",
+        iconColor: "text-white"
     },
     {
-        name: "WeChat",
         icon: MessageSquare,
         href: "weixin://dl/chat?wxid_mdvgqxr7r9jr12",
-        color: "hover:bg-green-400",
+        label: "WeChat",
+        bgColor: "bg-[#06B056]",
+        hoverBg: "hover:bg-[#07C160]",
+        iconColor: "text-white"
     },
     {
-        name: "Telegram",
         icon: Send,
         href: "https://t.me/ceylonvisittourssrilanka",
-        color: "hover:bg-blue-500",
+        label: "Telegram",
+        bgColor: "bg-[#0077B8]",
+        hoverBg: "hover:bg-[#0088CC]",
+        iconColor: "text-white"
     },
     // {
     //   name: "LinkedIn",
