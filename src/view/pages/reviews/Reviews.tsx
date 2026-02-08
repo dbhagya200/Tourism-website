@@ -79,7 +79,7 @@ export function Reviews() {
                                 href={TRIPADVISOR_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-[#34E0A1] text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg text-center whitespace-nowrap flex items-center justify-center gap-2"
+                                className="bg-[#2d8f68] text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg text-center whitespace-nowrap flex items-center justify-center gap-2"
                             >
                                 <img
                                     src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_logoset_solid_green.svg"
@@ -105,7 +105,7 @@ export function Reviews() {
                             href={TRIPADVISOR_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-[#34E0A1] font-bold hover:underline"
+                            className="flex items-center gap-2 text-sky-600 font-bold hover:underline"
                         >
                             See all reviews
                             <ExternalLink size={16} />
@@ -126,7 +126,7 @@ export function Reviews() {
                                     <p className="text-slate-600 text-sm">Real-time reviews from travelers</p>
                                 </div>
                             </div>
-                            <CheckCircle className="text-[#34E0A1]" size={24} />
+                            <CheckCircle className="text-sky-700" size={24} />
                         </div>
 
                         {/* TripAdvisor Widget will load here */}
@@ -150,7 +150,7 @@ export function Reviews() {
                                 href={TRIPADVISOR_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-[#34E0A1] text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg"
+                                className="inline-flex items-center gap-3 bg-gradient-to-r from-sky-400 to-blue-600 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg"
                             >
                                 <img
                                     src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_logoset_solid_green.svg"
@@ -177,10 +177,10 @@ export function Reviews() {
                             <h3 className="text-xl font-bold text-slate-900 mb-6">Overall Rating</h3>
                             <div className="flex items-center justify-center gap-6 mb-8">
                                 <div className="text-center">
-                                    <div className="text-6xl font-black text-[#34E0A1]">5.0</div>
+                                    <div className="text-6xl font-black text-[#2170d0]">5.0</div>
                                     <div className="flex gap-1 mt-2 justify-center">
                                         {[...Array(5)].map((_, i) => (
-                                            <Star key={i} size={20} className="fill-[#34E0A1] text-[#34E0A1]" />
+                                            <Star key={i} size={20} className="fill-[#1588ff] text-[#1588ff]" />
                                         ))}
                                     </div>
                                     <p className="text-slate-600 mt-2">Based on 150+ reviews</p>
@@ -190,7 +190,7 @@ export function Reviews() {
                                 href={TRIPADVISOR_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block text-center text-[#34E0A1] font-bold hover:underline"
+                                className="block text-center text-[#2b62f0] font-bold hover:underline"
                             >
                                 View detailed ratings →
                             </a>
@@ -214,7 +214,7 @@ export function Reviews() {
                                 href={TRIPADVISOR_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mt-6 block text-center text-[#34E0A1] font-bold hover:underline"
+                                className="mt-6 block text-center text-[#2b62f0] font-bold hover:underline"
                             >
                                 Read more reviews on TripAdvisor →
                             </a>
@@ -226,7 +226,7 @@ export function Reviews() {
             {/* CTA Section */}
             <section className="py-20 px-8 bg-gradient-to-b from-white to-sky-50">
                 <div className="max-w-5xl mx-auto text-center">
-                    <div className="bg-gradient-to-r from-[#34E0A1] to-[#2DC691] p-12 rounded-[3rem] shadow-2xl shadow-[#34E0A1]/30 relative overflow-hidden">
+                    <div className="bg-gradient-to-r from-sky-500 to-blue-600 p-12 rounded-[3rem] shadow-2xl shadow-[#34E0A1]/30 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
@@ -241,7 +241,7 @@ export function Reviews() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link
                                 to="/contact"
-                                className="inline-block bg-white text-[#34E0A1] px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-lg relative z-10"
+                                className="inline-block bg-white text-[#2170d0] px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-lg relative z-10"
                             >
                                 Book Your Trip
                             </Link>
@@ -249,7 +249,7 @@ export function Reviews() {
                                 href={TRIPADVISOR_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#34E0A1] transition-all duration-300 shadow-lg relative z-10"
+                                className="inline-block border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#2170d0] transition-all duration-300 shadow-lg relative z-10"
                             >
                                 Write a Review
                             </a>
@@ -277,7 +277,7 @@ export function Reviews() {
                             href={TRIPADVISOR_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-[#34E0A1] text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg flex items-center gap-2"
+                            className="bg-[#2d8f68] text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg flex items-center gap-2"
                         >
                             <ExternalLink size={16} />
                             Visit Our Page

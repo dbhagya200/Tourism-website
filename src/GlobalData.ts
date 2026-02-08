@@ -328,7 +328,7 @@ export const galleryItems = [
     {
         id: 1,
         category: "Mountains",
-        src: "https://images.unsplash.com/photo-1529230117010-335661a5b89a?auto=format&fit=crop&w=800",
+        src: "https://drive.google.com/file/d/1WoHpicqFwIx--1L4pR6TafNVX6S0XnCk/view?usp=drive_link",
         alt: "Beautiful mountain landscape",
     },
     {

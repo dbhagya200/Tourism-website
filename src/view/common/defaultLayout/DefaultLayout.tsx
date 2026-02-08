@@ -8,6 +8,8 @@ export function DefaultLayout() {
             <Navbar/>
             <Main/>
             <Footer/>
+
         </>
     );
+
 }

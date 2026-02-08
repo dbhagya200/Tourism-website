@@ -1,39 +1,11 @@
-import { useState, useEffect } from "react";
-import { Play, ArrowRight, Star, MapPin, Eye, X, ExternalLink } from "lucide-react";
+
+import { useState } from "react";
+import { Play, ArrowRight, Star, MapPin, Eye, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { reels } from "../../../GlobalData.ts";
+import { featuredReviews, reels } from "../../../GlobalData.ts";
 
-export function Home() {
+export function NewHome() {
     const [selectedReel, setSelectedReel] = useState<number | null>(null);
-    const [loadingReviews, setLoadingReviews] = useState(true);
-
-    const TRIPADVISOR_URL = "https://www.tripadvisor.com/Attraction_Review-g297896-d8862399-Reviews-Visit_Ceylon_Tours-Galle_Galle_District_Southern_Province.html";
-
-    // Load TripAdvisor widget on component mount
-    useEffect(() => {
-        const loadTripAdvisorWidget = () => {
-            const script = document.createElement('script');
-            script.src = 'https://www.jscache.com/wejs?wtype=selfserveprop&uniq=1&locationId=8862399&lang=en_US&rating=true&nreviews=4&writereviewlink=true&popIdx=true&iswide=false&border=true&display_version=2';
-            script.async = true;
-            script.charset = 'utf-8';
-            script.onload = () => setLoadingReviews(false);
-
-            const container = document.getElementById('tripadvisor-widget-container');
-            if (container) {
-                container.appendChild(script);
-            }
-        };
-
-        loadTripAdvisorWidget();
-
-        return () => {
-            const script = document.querySelector('script[src*="jscache.com/wejs"]');
-            if (script && script.parentNode) {
-                script.parentNode.removeChild(script);
-            }
-        };
-    }, []);
-
     const getEmbedUrl = (url: string) => {
         const videoId = url.split("/shorts/")[1]?.split("?")[0];
         return `https://www.youtube.com/embed/${videoId}`;
@@ -83,10 +55,10 @@ export function Home() {
                             Watch Stories
                         </Link>
                         <Link
-                            to="/contact"
+                            to="/"
                             className="bg-gradient-to-r from-sky-400 to-blue-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 hover:shadow-lg hover:shadow-sky-500/40 transition-all duration-300 border border-white/10 text-sm md:text-base"
                         >
-                            Book Your Trip
+                            Explore Packages
                         </Link>
                     </div>
                 </div>
@@ -118,32 +90,38 @@ export function Home() {
                             data-aos-delay={idx * 100}
                             onClick={() => setSelectedReel(idx)}
                         >
+                            {/* Thumbnail Image */}
                             <img
                                 src={getThumbnailUrl(reel.src)}
                                 alt={reel.title}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />
 
+                            {/* Gradient Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent opacity-50 group-hover:opacity-80 transition-all duration-300"></div>
 
+                            {/* Play Button */}
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="w-12 h-12 bg-gradient-to-br from-sky-400 to-blue-600 text-white rounded-full flex items-center justify-center shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-blue-500/50 border-2 border-white/30">
                                     <Play size={16} fill="currentColor" className="ml-1" />
                                 </div>
                             </div>
 
+                            {/* Badge */}
                             <div className="absolute top-3 left-3">
                                 <span className="px-2 py-1 bg-sky-500 text-white text-xs font-bold rounded-full shadow-sm">
                                     {reel.badge}
                                 </span>
                             </div>
 
+                            {/* Location */}
                             <div className="absolute top-3 right-3">
                                 <span className="px-2 py-1 bg-black/50 backdrop-blur-sm text-white text-xs font-medium rounded-full">
                                     📍 {reel.location.split(',')[0]}
                                 </span>
                             </div>
 
+                            {/* Title */}
                             <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 via-black/50 to-transparent transform translate-y-0 group-hover:translate-y-0 transition-transform duration-300">
                                 <span className="block text-sm font-bold text-white truncate drop-shadow-sm">
                                     {reel.title}
@@ -183,6 +161,7 @@ export function Home() {
                             </button>
                         </div>
 
+                        {/* Video Player */}
                         <div className="aspect-video bg-gradient-to-b from-slate-900 via-gray-900 to-black rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10 border border-white/10 p-1">
                             <iframe
                                 src={`${getEmbedUrl(reels[selectedReel].src)}?autoplay=1`}
@@ -194,6 +173,7 @@ export function Home() {
                             />
                         </div>
 
+                        {/* Video Details */}
                         <div className="mt-6 bg-white p-6 rounded-2xl border border-slate-100 shadow-xl">
                             <h2 className="text-2xl font-bold text-slate-900 mb-2 font-serif">
                                 {reels[selectedReel].title}
@@ -210,111 +190,51 @@ export function Home() {
                 </div>
             )}
 
-            {/* --- Live TripAdvisor Reviews Section --- */}
+            {/* --- Reviews Teaser Section --- */}
             <section className="py-20 px-6 md:px-12 relative overflow-hidden bg-gradient-to-br from-white via-sky-50 to-white">
                 <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-sky-200/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
                 <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-200/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
                     <div data-aos="fade-right">
-                        <div className="flex items-center gap-3 mb-4">
-                            <img
-                                src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_logoset_solid_green.svg"
-                                alt="TripAdvisor"
-                                className="h-8 w-auto"
-                            />
-                            <span className="text-sm font-bold text-[#2559a2] bg-[#34E0A1]/10 px-3 py-1 rounded-full">
-                                Certificate of Excellence 2024
-                            </span>
-                        </div>
-
                         <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-slate-900 leading-tight">
-                            Live Reviews from <br /><span className="text-sky-500">TripAdvisor</span>
+                            Loved by <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">Travelers</span>
                         </h2>
                         <p className="text-slate-600 mb-8 text-base leading-relaxed">
-                            See what travelers are saying about us in real-time.
-                            Our 5-star rating speaks for itself.
+                            Don't just take our word for it. Read verified reviews from guests who have experienced the magic.
                         </p>
 
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="flex gap-1">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} size={24} className="fill-[#1588ff] text-[#1588ff]" />
-                                ))}
-                            </div>
-                            <span className="text-2xl font-bold text-slate-900">5.0</span>
-                            <span className="text-slate-500">(150+ reviews)</span>
-                        </div>
-
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <a
-                                href={TRIPADVISOR_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex justify-center items-center gap-2 bg-[#234377] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#2170d0] transition-colors shadow-xl shadow-[#34E0A1]/20 text-sm"
-                            >
-                                View All Reviews
-                                <ExternalLink size={16} />
-                            </a>
-                            <Link
-                                to="/reviews"
-                                className="inline-flex justify-center items-center gap-2 bg-white px-6 py-3 rounded-xl border border-slate-200 shadow-sm text-sky-600 text-sm font-bold hover:border-[#2170d0] hover:text-[#1588ff] transition-all"
-                            >
-                                See More
-                                <ArrowRight size={16} />
+                            <Link to="/reviews" className="inline-flex justify-center items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-sky-600 transition-colors shadow-xl shadow-slate-900/20 text-sm">
+                                Read All Stories <ArrowRight size={16} />
                             </Link>
+                            <div className="inline-flex justify-center items-center gap-2 bg-white px-6 py-3 rounded-xl border border-slate-200 shadow-sm text-slate-700 text-sm">
+                                <Star size={16} className="text-yellow-400" fill="currentColor" />
+                                <span className="font-bold">4.9/5 Rating</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="bg-white p-6 rounded-3xl border-2 border-[#34E0A1]/20 shadow-xl" data-aos="fade-left">
-                        <div className="flex justify-between items-center mb-6">
-                            <h3 className="text-xl font-bold text-slate-900">Recent Reviews</h3>
-                            <div className="flex items-center gap-1 bg-[#34E0A1]/10 px-2 py-1 rounded-full">
-                                <span className="text-xs font-bold text-[#1588ff]">Live</span>
-                                <div className="w-2 h-2 bg-[#1588ff] rounded-full animate-pulse"></div>
-                            </div>
-                        </div>
-
-                        {/* TripAdvisor Widget Container */}
-                        <div id="tripadvisor-widget-container">
-                            {loadingReviews ? (
-                                <div className="text-center py-12">
-                                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#34E0A1] mx-auto mb-4"></div>
-                                    <p className="text-slate-500">Loading live reviews from TripAdvisor...</p>
-                                </div>
-                            ) : (
-                                <div className="min-h-[200px] flex items-center justify-center">
-                                    {/* Widget will load here automatically */}
-                                    <div id="TA_selfserveprop1" className="TA_selfserveprop">
-                                        <ul id="0jkyy07l3" className="TA_links iF2P0IT">
-                                            <li id="iQbXX4S" className="3jkq2z">
-                                                <a target="_blank" href={TRIPADVISOR_URL}>
-                                                    <img src="https://static.tacdn.com/img2/widget/tripadvisor_logo_115x18.gif"
-                                                         alt="TripAdvisor"
-                                                         className="widEXCIMG" />
-                                                </a>
-                                            </li>
-                                        </ul>
+                    <div className="grid gap-5">
+                        {featuredReviews.map((review) => (
+                            <div key={review.id} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-xl shadow-sky-100/50 hover:shadow-2xl transition-shadow" data-aos="fade-up">
+                                <div className="flex justify-between items-start mb-3">
+                                    <div className="flex gap-1 text-yellow-400">
+                                        {[...Array(review.stars)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
                                     </div>
                                 </div>
-                            )}
-                        </div>
-
-                        <div className="mt-6 pt-6 border-t border-slate-200 text-center">
-                            <a
-                                href={TRIPADVISOR_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-[#1588ff] font-bold hover:underline text-sm"
-                            >
-                                Write your own review on TripAdvisor
-                                <ExternalLink size={14} />
-                            </a>
-                        </div>
+                                <p className="text-slate-600 italic mb-4 text-base leading-relaxed">"{review.text}"</p>
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-100 to-blue-100 flex items-center justify-center font-bold text-blue-600 text-base border border-sky-100">
+                                        {review.name.charAt(0)}
+                                    </div>
+                                    <span className="font-bold text-slate-900 text-sm">{review.name}</span>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
-
 
             {/* --- Packages Teaser Section ---*/}
             {/*<section className="py-16 px-6 md:px-12 bg-white">*/}
@@ -390,45 +310,21 @@ export function Home() {
                 </div>
             </section>
 
-            {/* --- Contact CTA with TripAdvisor Badge --- */}
+            {/* --- Contact CTA --- */}
             <section className="py-20 px-6 md:px-12 bg-sky-50">
                 <div className="max-w-5xl mx-auto bg-gradient-to-r from-sky-400 to-blue-600 rounded-[2.5rem] p-10 md:p-16 text-center text-white shadow-2xl shadow-sky-400/30 relative overflow-hidden" data-aos="zoom-in">
 
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
-                    <div className="absolute top-6 right-6">
-                        <a href={TRIPADVISOR_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full hover:bg-white/30 transition-colors">
-                            <img
-                                src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_logoset_solid_green.svg"
-                                alt="TripAdvisor"
-                                className="h-5 w-auto"
-                            />
-                            <span className="text-white text-sm font-bold">5.0 ★</span>
-                        </a>
-                    </div>
-
                     <h2 className="text-3xl md:text-5xl font-serif font-black mb-4 relative z-10">Ready for your <br/>Dream Vacation?</h2>
-                    <p className="text-sky-100 text-base md:text-xl max-w-xl mx-auto mb-8 relative z-10 font-light">
-                        Join 150+ happy travelers who rated us 5 stars on TripAdvisor.
+                    <p className="text-base md:text-xl text-sky-100 max-w-xl mx-auto mb-8 relative z-10 font-light">
                         Let us handle the details while you create the memories.
                     </p>
-
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link to="/contact" className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-sky-50 hover:shadow-xl hover:scale-105 transition-all relative z-10 shadow-lg">
-                            <MapPin size={20} />
-                            Plan My Trip
-                        </Link>
-                        <a
-                            href={TRIPADVISOR_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 bg-[#234377] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#1d2e4f] hover:shadow-xl hover:scale-105 transition-all relative z-10 shadow-lg"
-                        >
-                            <ExternalLink size={20} />
-                            View Reviews
-                        </a>
-                    </div>
+                    <Link to="/contact" className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-sky-50 hover:shadow-xl hover:scale-105 transition-all relative z-10 shadow-lg">
+                        <MapPin size={20} />
+                        Plan My Trip
+                    </Link>
                 </div>
             </section>
         </main>
