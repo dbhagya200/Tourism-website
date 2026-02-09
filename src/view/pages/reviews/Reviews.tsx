@@ -33,38 +33,38 @@ export function Reviews() {
     }, []);
 
     // Function to get country flag
-    const getCountryFlag = (countryCode: string) => {
-        const flagMap: Record<string, string> = {
-            'US': 'us', 'USA': 'us',
-            'UK': 'gb', 'United Kingdom': 'gb',
-            'AU': 'au', 'Australia': 'au',
-            'CA': 'ca', 'Canada': 'ca',
-            'DE': 'de', 'Germany': 'de',
-            'CH': 'ch', 'Switzerland': 'ch',
-            'FR': 'fr', 'France': 'fr',
-            'ES': 'es', 'Spain': 'es',
-            'IT': 'it', 'Italy': 'it',
-            'NL': 'nl', 'Netherlands': 'nl',
-            'DK': 'dk', 'Denmark': 'dk',
-            'SE': 'se', 'Sweden': 'se',
-            'NO': 'no', 'Norway': 'no',
-            'FI': 'fi', 'Finland': 'fi',
-            'IN': 'in', 'India': 'in',
-            'JP': 'jp', 'Japan': 'jp',
-            'KR': 'kr', 'South Korea': 'kr',
-            'CN': 'cn', 'China': 'cn',
-            'SG': 'sg', 'Singapore': 'sg',
-            'MY': 'my', 'Malaysia': 'my',
-            'AE': 'ae', 'UAE': 'ae',
-            'SA': 'sa', 'Saudi Arabia': 'sa',
-            'ZA': 'za', 'South Africa': 'za'
-        };
-
-        if (countryCode && flagMap[countryCode]) {
-            return `https://flagcdn.com/w20/${flagMap[countryCode]}.png`;
-        }
-        return null;
-    };
+    // const getCountryFlag = (countryCode: string) => {
+    //     const flagMap: Record<string, string> = {
+    //         'US': 'us', 'USA': 'us',
+    //         'UK': 'gb', 'United Kingdom': 'gb',
+    //         'AU': 'au', 'Australia': 'au',
+    //         'CA': 'ca', 'Canada': 'ca',
+    //         'DE': 'de', 'Germany': 'de',
+    //         'CH': 'ch', 'Switzerland': 'ch',
+    //         'FR': 'fr', 'France': 'fr',
+    //         'ES': 'es', 'Spain': 'es',
+    //         'IT': 'it', 'Italy': 'it',
+    //         'NL': 'nl', 'Netherlands': 'nl',
+    //         'DK': 'dk', 'Denmark': 'dk',
+    //         'SE': 'se', 'Sweden': 'se',
+    //         'NO': 'no', 'Norway': 'no',
+    //         'FI': 'fi', 'Finland': 'fi',
+    //         'IN': 'in', 'India': 'in',
+    //         'JP': 'jp', 'Japan': 'jp',
+    //         'KR': 'kr', 'South Korea': 'kr',
+    //         'CN': 'cn', 'China': 'cn',
+    //         'SG': 'sg', 'Singapore': 'sg',
+    //         'MY': 'my', 'Malaysia': 'my',
+    //         'AE': 'ae', 'UAE': 'ae',
+    //         'SA': 'sa', 'Saudi Arabia': 'sa',
+    //         'ZA': 'za', 'South Africa': 'za'
+    //     };
+    //
+    //     if (countryCode && flagMap[countryCode]) {
+    //         return `https://flagcdn.com/w20/${flagMap[countryCode]}.png`;
+    //     }
+    //     return null;
+    // };
 
     return (
         <main className="min-h-screen font-sans text-slate-800 bg-white">
@@ -266,18 +266,18 @@ export function Reviews() {
                                             <User size={14} />
                                             <span>{manualReviews[0].author}</span>
                                         </div>
-                                        {manualReviews[0].country && (
-                                            <div className="flex items-center gap-2 text-sm text-slate-600">
-                                                {getCountryFlag(manualReviews[0].country) && (
-                                                    <img
-                                                        src={getCountryFlag(manualReviews[0].country)!}
-                                                        alt={manualReviews[0].country}
-                                                        className="w-5 h-3 rounded"
-                                                    />
-                                                )}
-                                                <span>{manualReviews[0].country}</span>
-                                            </div>
-                                        )}
+                                        {/*{manualReviews[0].country && (*/}
+                                        {/*    <div className="flex items-center gap-2 text-sm text-slate-600">*/}
+                                        {/*        {getCountryFlag(manualReviews[0].country) && (*/}
+                                        {/*            <img*/}
+                                        {/*                src={getCountryFlag(manualReviews[0].country)!}*/}
+                                        {/*                alt={manualReviews[0].country}*/}
+                                        {/*                className="w-5 h-3 rounded"*/}
+                                        {/*            />*/}
+                                        {/*        )}*/}
+                                        {/*        <span>{manualReviews[0].country}</span>*/}
+                                        {/*    </div>*/}
+                                        {/*)}*/}
                                         <div className="flex items-center gap-2 text-sm text-slate-600">
                                             <Calendar size={14} />
                                             <span>{manualReviews[0].stayDate}</span>
@@ -386,18 +386,18 @@ export function Reviews() {
                                         </div>
                                         <div>
                                             <p className="font-medium text-sm">{review.author}</p>
-                                            {review.country && (
-                                                <p className="text-xs text-slate-500 flex items-center gap-1">
-                                                    {getCountryFlag(review.country) && (
-                                                        <img
-                                                            src={getCountryFlag(review.country)!}
-                                                            alt={review.country}
-                                                            className="w-4 h-3 rounded inline-block"
-                                                        />
-                                                    )}
-                                                    {review.country}
-                                                </p>
-                                            )}
+                                            {/*{review.country && (*/}
+                                            {/*    <p className="text-xs text-slate-500 flex items-center gap-1">*/}
+                                            {/*        {getCountryFlag(review.country) && (*/}
+                                            {/*            <img*/}
+                                            {/*                src={getCountryFlag(review.country)!}*/}
+                                            {/*                alt={review.country}*/}
+                                            {/*                className="w-4 h-3 rounded inline-block"*/}
+                                            {/*            />*/}
+                                            {/*        )}*/}
+                                            {/*        {review.country}*/}
+                                            {/*    </p>*/}
+                                            {/*)}*/}
                                         </div>
                                     </div>
                                     <CheckCircle size={16} className="text-green-500" />
