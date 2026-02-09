@@ -105,7 +105,7 @@ export function Navbar() {
                 >
                     {/* Drawer Logo */}
                     <div className="absolute top-6 left-8 text-xl font-black text-blue-600">
-                        CEYLON <span className="text-sky-400">VISTA</span>
+                        CEYLON VISIT TOURS -  <span className="text-sky-400">SRI LANKA</span>
                     </div>
 
                     <ul className="flex flex-col gap-2">
