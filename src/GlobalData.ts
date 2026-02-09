@@ -281,73 +281,130 @@ export const reels = [
 export const allReviews = [
     {
         id: 1,
-        author: "Traveler1969",
+        author: "Nagamani G",
         rating: 5,
-        date: "September 14, 2025",
-        title: "Wonderful family experience in Sri Lanka\n",
-        content: "We have just arrived from a 15-day tour in this fascinating country. " +
-            "We have traveled with family, children and other family friends." +
-            "Sri Lanka really is a highly recommended, very safe and accessible destination for traveling with young children." +
-            " The people are super respectful, hospitable and very friendly. Always ready to help and teach you their culture." +
-            " It is a very genuine country, of unforgettable landscapes, framed in nature." +
-            " Admeh and his team have demonstrated great professionalism, " +
-            "guiding our experience always attentive to meet our needs and meet our expectations. " +
-            "Always with much pampering, patience and respecting our rhythms and especially the children. " +
-            "It has really exceeded our expectation making our experience in your country totally rewarding and very enjoyed. " +
-            "It helps you personalize the tour and the different experiences, always conveying a lot of passion," +
-            " love and respect for your country and the local people." +
-            " I definitely recommend it 100%",
+        date: " 24 May 2025",
+        title: "Sri Lanka trip",
+        content: "An Unforgettable Sri Lankan Journey with Celon Visit Tours and Our Amazing Guide Budhhika! " +
+            "Our recent trip to Sri Lanka was an absolute dream come true, and the credit goes entirely " +
+            "to Celon Visit Tours and our exceptional tour guide, Budhhika. From start to finish, " +
+            "the experience was flawlessly organized, deeply enriching, and incredibly enjoyable. " +
+            "We traveled through some of Sri Lanka’s most beautiful and diverse locations—Pasikuda," +
+            " Kandy, Nuwara Eliya, Bentota, and Colombo—and at every stop, Budhhika’s knowledge, " +
+            "kindness, and professionalism elevated the entire journey. Our stay in Pasikuda was " +
+            "the perfect beachside escape. The serene waters, soft sand, and peaceful atmosphere" +
+            " offered a much-needed retreat. Budhhika ensured we had time to both relax and enjoy" +
+            " optional activities, always checking in to make sure we were comfortable and happy. " +
+            "In Kandy, we were immersed in the spiritual and cultural heart of Sri Lanka. Visiting" +
+            " the Temple of the Tooth Relic was a moving experience, and Budhhika’s insights into the " +
+            "history and traditions of the area made it all the more meaningful. " +
+            "His passion for his country’s heritage was contagious. " +
+            "Nuwara Eliya was a refreshing highlight, with its cooler " +
+            "climate and lush landscapes. We loved the visit to the tea estates and factory," +
+            " where we learned so much about Ceylon tea. Budhhika even arranged a scenic stop " +
+            "for photos that turned out to be one of our favorite memories! Bentota offered " +
+            "adventure and relaxation in perfect balance. From the river safari to the turtle" +
+            " hatchery, every activity was thoughtfully planned, and Budhhika’s local connections " +
+            "ensured we had the best possible experience without the touristy feel. Finally, Colombo provided a " +
+            "wonderful conclusion to our trip. The city tour was both lively and insightful," +
+            " with Budhhika showing us not just the main sights but also hidden gems that we " +
+            "would have never discovered on our own. Throughout the entire trip, Budhhika was" +
+            " more than a guide—he was a wonderful companion, always cheerful, respectful, and" +
+            " incredibly knowledgeable. He went above and beyond to make sure we were safe," +
+            " comfortable, and fully immersed in each experience. The vehicle was clean and" +
+            " comfortable, and every hotel and activity was thoughtfully selected by Celon Visit Tours. " +
+            "This was more than just a vacation—it was a deeply personal and unforgettable journey " +
+            "through one of the most beautiful countries we’ve ever visited. If you are planning a" +
+            " trip to Sri Lanka, we wholeheartedly recommend Celon Visit Tours—and if you’re lucky enough " +
+            "to travel with Budhhika, you’re in for something truly special!",
         source: "TripAdvisor",
-        sourceUrl: "https://www.tripadvisor.com/ShowUserReviews-g297896-d8862399-r1030310635-Visit_Ceylon_Tours-Galle_Galle_District_Southern_Province.html?m=19905",
+        sourceUrl: "https://www.tripadvisor.co.uk/ShowUserReviews-g297896-d27698089-r1008962650-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html?m=19905",
         // country: "Switzerland",
         tripType: "Traveled with family",
-        stayDate: "September 2025"
+        stayDate: "May 2025"
     },
     {
         id: 2,
-        name: "John Doe",
-        role: "Adventurer • TripAdvisor",
-        avatar: "https://i.pravatar.cc/150?u=2",
-        comment: "Best luxury travel agency in Sri Lanka. Everything was perfectly organized.",
+        author: "Nadine L",
         rating: 5,
-        verified: true,
+        date: " 5 December 2025",
+        title: "Wonderful experience!",
+        content: "Had a fantastic experience with Buddhi! Booked a " +
+            "safari with him and both Buddhi and the driver went to so" +
+            " much effort to make sure we saw as many animals as possible," +
+            " never rushed us and only moved on when we were ready. We were so " +
+            "impressed, we then booked an overnight trip to Sigiriya with Buddhi and" +
+            " had another great experience - he was so helpful and friendly. Very comfortable new car too!",
+        source: "TripAdvisor",
+        sourceUrl: "https://www.tripadvisor.co.uk/ShowUserReviews-g297896-d27698089-r1041414503-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html?m=19905",
+        // country: "United Kingdom",
+        tripType: "Travelled as a couple",
+        stayDate: "December 2025"
     },
     {
         id: 3,
-        name: "Sarah Johnson",
-        role: "Travel Blogger • Facebook",
-        avatar: "https://i.pravatar.cc/150?u=3",
-        comment: "Exceptional service and attention to detail. Highly recommend for luxury travelers.",
+        author: "Abi S",
         rating: 5,
-        verified: true,
+        date: " 31 July 2025",
+        title: "The Kindest and Most Reliable Driver – Feels Like Family",
+        content: "We had the absolute pleasure of traveling with Buddika," +
+            " and we truly couldn’t have asked for a better driver and guide. " +
+            "Our first trip with him was 2 years ago — it was an all-girls family trip, " +
+            "and we felt completely safe, comfortable, and well taken care of throughout. In fact," +
+            " we were his very first customers, and it's been heartwarming to see how he still " +
+            "welcomes us so kindly every time we visit Galle. Buddika is always punctual, polite, " +
+            "and incredibly kind. He goes above and beyond by recommending great places to visit and " +
+            "ensuring everything runs smoothly. He’s very helpful, always ready with a warm smile, " +
+            "and his vehicle is clean and well-maintained, making our journeys even more enjoyable. " +
+            "Truly the best driver ever — we highly recommend Buddika to anyone visiting Sri Lanka." +
+            " You’ll be in safe, friendly, and professional hands!",
+        source: "TripAdvisor",
+        sourceUrl: "https://www.tripadvisor.co.uk/ShowUserReviews-g297896-d27698089-r1021915250-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html?m=19905",
+        // country: "Australia",
+        tripType: "Traveled with family",
+        stayDate: "July 2025"
     },
     {
         id: 4,
-        name: "Rajesh Kumar",
-        role: "Business Traveler • LinkedIn",
-        avatar: "https://i.pravatar.cc/150?u=4",
-        comment: "Professional team that understands what luxury means. Outstanding experience throughout.",
-        rating: 4,
-        verified: true,
+        author: "Валерия Д",
+        rating: 5,
+        date: " 17 March 2025",
+        title: "We are happy",
+        content: "We spent 5 days in the company of the wonderful driver Buddhi. " +
+            "He took into account all our wishes, suggested how to make the route " +
+            "optimal and most interesting. Unobtrusively offered alternative options. " +
+            "Cheerful, interesting, punctual. He answered all your questions. " +
+            "The car has a comfortable temperature, pleasant music, very clean! You " +
+            "can turn on your own music if you wish, but we liked the Buddhi's music." +
+            " He gives advice and accompanies you to all locations. He gave our Mom a " +
+            "surprise for her birthday! Decorated the car with balloons, turned on the music," +
+            " presented a cake! We recommend using a driver when traveling to Sri Lanka, " +
+            "as the road is not easy, the traffic is very heavy, and in fact it is difficult! " +
+            "Buddhi has comfortable safe driving skills. It was a pity to break up! We became friends!",
+        source: "TripAdvisor",
+        sourceUrl: "https://www.tripadvisor.co.uk/ShowUserReviews-g297896-d27698089-r998623601-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html?m=19905",
+        // country: " United Kingdom",
+        tripType: "Traveled with family",
+        stayDate: "March 2025"
     },
     {
         id: 5,
-        name: "Emma Williams",
-        role: "Couple on Honeymoon • Google",
-        avatar: "https://i.pravatar.cc/150?u=5",
-        comment: "Made our honeymoon absolutely perfect. Every detail was thoughtfully planned.",
+        author: "Steve R",
         rating: 5,
-        verified: true,
-    },
-    {
-        id: 6,
-        name: "Michael Chen",
-        role: "Family Traveler • TripAdvisor",
-        avatar: "https://i.pravatar.cc/150?u=6",
-        comment: "Great packages for families. Kids had amazing time exploring Sri Lanka safely.",
-        rating: 4,
-        verified: true,
-    },
+        date: "12 November 2025",
+        title: "Great Tour Company",
+        content: "We had Ceylon Tours Buddi arrange two trips for us, " +
+            "Yala Safari which we had a private vehicle tour and Whale watching in Mirrissa. " +
+            "Was very flexible with times and dates with great prices. We even had to change a" +
+            " date and this was no problem. Well organised and very punctual. Saw leopard, monkeys," +
+            " elephants crocs etc on Safari. Would definitely recommended to use Ceylon Tours couldn’t " +
+            "be more helpful",
+        source: "TripAdvisor",
+        sourceUrl: "https://www.tripadvisor.co.uk/ShowUserReviews-g297896-d27698089-r1038735339-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html?m=19905",
+        // country: "Canada",
+        tripType: "Traveled with family",
+        stayDate: " November 2025"
+    }
 ];
 
 // Gallery Page Data
