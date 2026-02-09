@@ -95,22 +95,22 @@ export function Reviews() {
                                     ))}
                                 </div>
                                 <span className="text-4xl font-black text-white drop-shadow-md">5.0</span>
-                                <div className="flex items-center gap-3">
-                                    <div className="flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full">
-                                        <img
-                                            src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_logoset_solid_green.svg"
-                                            alt="TripAdvisor"
-                                            className="h-5 w-auto"
-                                        />
-                                    </div>
-                                    <div className="flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full">
-                                        <img
-                                            src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png"
-                                            alt="Google"
-                                            className="h-5 w-auto"
-                                        />
-                                    </div>
-                                </div>
+                                {/*<div className="flex items-center gap-3">*/}
+                                {/*    <div className="flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full">*/}
+                                {/*        <img*/}
+                                {/*            src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_logoset_solid_green.svg"*/}
+                                {/*            alt="TripAdvisor"*/}
+                                {/*            className="h-5 w-auto"*/}
+                                {/*        />*/}
+                                {/*    </div>*/}
+                                {/*    <div className="flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full">*/}
+                                {/*        <img*/}
+                                {/*            src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png"*/}
+                                {/*            alt="Google"*/}
+                                {/*            className="h-5 w-auto"*/}
+                                {/*        />*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
                             </div>
                             <p className="text-sky-100 font-medium text-lg">
                                 <span className="font-bold">{manualReviews.length * 10}+</span> verified reviews across platforms
