@@ -6,7 +6,7 @@ import { allReviews } from "../../../GlobalData.ts"; // Import your reviews
 
 export function Home() {
     const [selectedReel, setSelectedReel] = useState<number | null>(null);
-    const [ setLoadingReviews] = useState(true);
+    // const [ setLoadingReviews] = useState(false);
 
     const TRIPADVISOR_URL = "https://www.tripadvisor.co.uk/Attraction_Review-g297896-d27698089-Reviews-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html";
     // const GOOGLE_REVIEWS_URL = "https://g.page/r/CeylonVisitTours/review";
