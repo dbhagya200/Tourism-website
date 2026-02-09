@@ -12,27 +12,34 @@ export function Gallery() {
             ? galleryItems
             : galleryItems.filter((item) => item.category === selectedCategory);
 
-    // Handle keyboard navigation
+    // Handle keyboard navigation - FIXED VERSION
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (selectedImage === null) return;
 
             switch (e.key) {
                 case "Escape":
-                    closeModal();
+                    setSelectedImage(null);
+                    document.body.style.overflow = 'auto';
                     break;
                 case "ArrowLeft":
-                    navigateImage(-1);
+                    // Move to previous image
+                    if (selectedImage > 0) {
+                        setSelectedImage(selectedImage - 1);
+                    }
                     break;
                 case "ArrowRight":
-                    navigateImage(1);
+                    // Move to next image
+                    if (selectedImage < filteredItems.length - 1) {
+                        setSelectedImage(selectedImage + 1);
+                    }
                     break;
             }
         };
 
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [selectedImage]);
+    }, [selectedImage, filteredItems.length]);
 
     const navigateImage = (direction: number) => {
         if (selectedImage === null) return;
