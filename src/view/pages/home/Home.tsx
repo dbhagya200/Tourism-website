@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Play, ArrowRight, Star, MapPin, Eye, X, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
-import { reels } from "../../../GlobalData.ts";
+import {galleryItems, reels} from "../../../GlobalData.ts";
 
 export function Home() {
     const [selectedReel, setSelectedReel] = useState<number | null>(null);
@@ -46,6 +46,13 @@ export function Home() {
         }
         return `https://img.youtube.com/vi/${url}/hqdefault.jpg`;
     };
+
+    const featuredImages = galleryItems.slice(0, 4);
+
+    // If you have fewer than 4 images, add fallback
+    const imagesToShow = featuredImages.length >= 4
+        ? featuredImages
+        : [...featuredImages, ...Array(4 - featuredImages.length).fill({})];
 
     return (
         <main className="bg-gradient-to-b from-white via-sky-50 to-white text-slate-800 font-sans min-h-screen">
@@ -363,31 +370,107 @@ export function Home() {
             {/*</section>*/}
 
             {/* --- Gallery Teaser Section --- */}
-            <section className="py-20 px-6 md:px-12 text-center bg-white">
+            <section className="py-5 px-6 md:px-12 text-center bg-white">
                 <h2 className="text-3xl md:text-4xl font-serif font-bold mb-10 text-slate-900">
                     Captured <span className="text-sky-500">Moments</span>
                 </h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto h-[400px] mb-10">
-                    <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden relative group shadow-lg cursor-pointer">
-                        <img src="https://images.unsplash.com/photo-1529230117010-335661a5b89a?auto=format&fit=crop&w=800" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Sri Lanka 1" />
-                    </div>
-                    <div className="rounded-2xl overflow-hidden relative group shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1552423158-efc54b6df1e1?auto=format&fit=crop&w=400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Sri Lanka 2" />
-                    </div>
-                    <div className="rounded-2xl overflow-hidden relative group shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Sri Lanka 3" />
-                    </div>
-                    <div className="col-span-2 rounded-2xl overflow-hidden relative group flex items-center justify-center bg-slate-100 shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=600" className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" alt="Sri Lanka 4" />
 
-                        <Link to="/gallery" className="absolute inset-0 flex flex-col items-center justify-center bg-blue-900/40 hover:bg-blue-900/60 transition-colors z-10 group cursor-pointer backdrop-blur-[2px]">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto h-[400px] mb-10">
+                    {/* Main large image (first image) */}
+                    <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden relative group shadow-lg cursor-pointer">
+                        {imagesToShow[0]?.src ? (
+                            <>
+                                <img
+                                    src={imagesToShow[0].src}
+                                    alt={imagesToShow[0].alt || "Gallery image 1"}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </>
+                        ) : (
+                            <div className="w-full h-full bg-slate-200 rounded-2xl flex items-center justify-center">
+                                <span className="text-slate-400">Image 1</span>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Second image */}
+                    <div className="rounded-2xl overflow-hidden relative group shadow-lg">
+                        {imagesToShow[1]?.src ? (
+                            <>
+                                <img
+                                    src={imagesToShow[1].src}
+                                    alt={imagesToShow[1].alt || "Gallery image 2"}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </>
+                        ) : (
+                            <div className="w-full h-full bg-slate-200 rounded-2xl flex items-center justify-center">
+                                <span className="text-slate-400">Image 2</span>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Third image */}
+                    <div className="rounded-2xl overflow-hidden relative group shadow-lg">
+                        {imagesToShow[2]?.src ? (
+                            <>
+                                <img
+                                    src={imagesToShow[2].src}
+                                    alt={imagesToShow[2].alt || "Gallery image 3"}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </>
+                        ) : (
+                            <div className="w-full h-full bg-slate-200 rounded-2xl flex items-center justify-center">
+                                <span className="text-slate-400">Image 3</span>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Fourth image with overlay link to gallery */}
+                    <div className="col-span-2 rounded-2xl overflow-hidden relative group shadow-lg">
+                        {imagesToShow[3]?.src ? (
+                            <img
+                                src={imagesToShow[3].src}
+                                alt={imagesToShow[3].alt || "Gallery image 4"}
+                                className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                            />
+                        ) : (
+                            <div className="w-full h-full bg-slate-200 rounded-2xl"></div>
+                        )}
+
+                        {/* Overlay with link to full gallery */}
+                        <Link
+                            to="/gallery"
+                            className="absolute inset-0 flex flex-col items-center justify-center bg-blue-900/40 hover:bg-blue-900/60 transition-colors z-10 group cursor-pointer backdrop-blur-[2px]"
+                        >
                             <div className="bg-white/20 backdrop-blur-md p-4 rounded-full mb-2 group-hover:scale-110 transition-transform shadow-xl border border-white/30">
                                 <Eye size={28} className="text-white" />
                             </div>
                             <span className="text-white font-bold text-lg drop-shadow-lg tracking-wider">VIEW GALLERY</span>
+                            <p className="text-white/90 text-sm mt-2 max-w-xs px-4">
+                                Explore {galleryItems.length}+ stunning photos from our travels
+                            </p>
                         </Link>
                     </div>
                 </div>
+
+                {/* Simple call to action */}
+                {/*<div className="max-w-3xl mx-auto">*/}
+                {/*    <p className="text-slate-600 mb-6">*/}
+                {/*        A glimpse from our collection of {galleryItems.length} travel photos*/}
+                {/*    </p>*/}
+                {/*    <Link*/}
+                {/*        to="/gallery"*/}
+                {/*        className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-full font-bold transition-colors shadow-lg"*/}
+                {/*    >*/}
+                {/*        <Eye size={20} />*/}
+                {/*        See All Photos*/}
+                {/*    </Link>*/}
+                {/*</div>*/}
             </section>
 
             {/* --- Contact CTA with TripAdvisor Badge --- */}
