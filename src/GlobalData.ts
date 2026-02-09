@@ -5,6 +5,16 @@ import {
     Star, Send
 } from "lucide-react";
 import {TiktokIcon} from "./view/common/footer/Footer.tsx";
+// import mountainImage from "/cvt-images/IMG_0170.jpg";
+
+// Get all images from the folder
+const imageModules = import.meta.glob('../public/cvt-images/*.{jpg,jpeg,png,webp}', {
+    eager: true,
+    import: 'default'
+});
+
+// Convert to array
+const images = Object.values(imageModules);
 
 
 // Home Page Data
@@ -327,153 +337,154 @@ export const allReviews = [
 export const galleryItems = [
     {
         id: 1,
-category: "Mountains",
-        src: "https://drive.google.com/file/d/15WsaW8FcRVcaCstelV2GWpWJR_8X372u/view?usp=drive_link",
+        category: "Mountains",
+        src: images[19],
         alt: "Beautiful mountain landscape",
     },
     {
         id: 2,
         category: "Wildlife",
-        src: "https://drive.google.com/file/d/1WoHpicqFwIx--1L4pR6TafNVX6S0XnCk/view?usp=drive_link",
+        src: images[7],
         alt: "Sri Lanka wildlife",
     },
     {
         id: 3,
         category: "Culture",
-        src: "https://drive.google.com/file/d/1NaCY6PHA9fzleU4PZpGiuvIjkQYOg4SQ/view?usp=drive_link",
-        alt: "Cultural si        tes",
+        src: images[2],
+        alt: "Cultural sites",
     },
     {
         id: 4,
         category: "Beaches",
-        src: "https://drive.google.com/file/d/1Cyqk1uRgn79Xwbl2eJkE8XV_TZKQr9js/view?usp=drive_link",
+        src: images[3],
         alt: "Pristine beaches",
     },
     {
         id: 5,
         category: "Nature",
-        src: "https://drive.google.com/file/d/1ekIhIIscPCoFayO_Abk7tW_vuFd9dDSh/view?usp=drive_link",
+        src: images[4],
         alt: "Lush nature and forests",
     },
     {
         id: 6,
         category: "Adventure",
-        src: "https://drive.google.com/file/d/161R43rZHJqLLhXSqtLzBlvQgFRZLBz_j/view?usp=drive_link",
+        src: images[5],
         alt: "Adventure activities",
     },
     {
         id: 7,
         category: "Sunsets",
-        src: "https://drive.google.com/file/d/1sWgvcATv8X0VMtW9Twlmq8R2y1l9Dud2/view?usp=drive_link",
+        src: images[6],
         alt: "Beautiful sunset",
     },
     {
         id: 8,
         category: "Culture",
-        src: "https://drive.google.com/file/d/1dSzOlDLZVz0hU7OLRNEfVTaiq9BcqBPO/view?usp=drive_link",
+        src: images[1],
         alt: "Temple and cultural heritage",
     },
     {
         id: 9,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1D-7xYw6g1uVYHkVirn1-AhHKoVpY6R3z/view?usp=drive_link",
+        src: images[8],
         alt: "Mountain peaks and valleys",
     },  {
         id: 10,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1vL4fTFPTuR86TIm_x1-v9nr1cGfUZmco/view?usp=drive_link",
+        src: images[9],
         alt: "Mountain peaks and valleys",
     },  {
         id: 11,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1VUzu1nJPh3dVU4YNgnbjXpdbrJ8SjRmq/view?usp=drive_link",
+        src: images[10],
         alt: "Mountain peaks and valleys",
     },  {
         id: 12,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1rtTKUtjFwsiBhrt4gXc6sawPJU578ZGk/view?usp=drive_link",
+        src: images[11],
         alt: "Mountain peaks and valleys",
     },  {
         id: 13,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/14JeheaEmB0b8SJuTZGmPq2MOClqC-nXC/view?usp=drive_link",
+        src: images[12],
         alt: "Mountain peaks and valleys",
     },  {
         id: 14,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1UCdMtc_buipyDAuBrSpEgyGwzXep-xQj/view?usp=drive_link",
+        src: images[13],
         alt: "Mountain peaks and valleys",
     },  {
         id: 15,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1rVXl_6Iof0Zt0jCfd9vij7abFXpl_UuS/view?usp=drive_link",
+        src: images[14],
         alt: "Mountain peaks and valleys",
     },  {
         id: 16,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1AS0L2w4l6LSsgvvL55-kh3X1UkJ_iBgv/view?usp=drive_link",
+        src: images[15],
         alt: "Mountain peaks and valleys",
     },  {
         id: 17,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1cd1AAskwZ5jABVhGT4cJo9IGCST6bp6x/view?usp=drive_link",
+        src: images[16],
         alt: "Mountain peaks and valleys",
     },  {
         id: 18,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1q-lqmLACyo0WmFDP620H26WvNkdqjTMJ/view?usp=drive_link",
+        src: images[17],
         alt: "Mountain peaks and valleys",
     },  {
         id: 19,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1YtZ5N2BTvmyDnhHjIFzkmwBOWJbdzqfy/view?usp=drive_link",
+        src: images[18],
         alt: "Mountain peaks and valleys",
     },  {
         id: 20,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1nwDRHXYughE2-8kIw6lWBBwE6hDAena_/view?usp=drive_link",
+        src: images[0],
         alt: "Mountain peaks and valleys",
     },  {
         id: 21,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1qUrMEdwFU4GCzTXL92YwxLztIQbdv_lT/view?usp=drive_link",
+        src: images[20],
         alt: "Mountain peaks and valleys",
     },  {
         id: 22,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1PgnJ_zTM3qxvhijhCY4aATCZYe3q1sqe/view?usp=drive_link",
+        src: images[21],
         alt: "Mountain peaks and valleys",
     },  {
         id: 23,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1Xx_QPp_Ssrv8ek_ZWGnxjsRt-hu0XBFo/view?usp=drive_link",
+        src: images[22],
         alt: "Mountain peaks and valleys",
     },  {
         id: 24,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1M7AJhTmcqi5hOHyl13FSukpywg8IvhoC/view?usp=drive_link",
+        src: images[23],
         alt: "Mountain peaks and valleys",
     },  {
         id: 25,
         category: "Mountains",
-        src: "https://drive.google.com/file/d/1dj5O_yHR-GZSHKTFjbHP8ikciQ_gF1dT/view?usp=drive_link",
-        alt: "Mountain peaks and valleys",
-    },  {
-        id: 26,
-        category: "Mountains",
-        src: "https://drive.google.com/file/d/1bP36cbZGkOBmTSwrUC7fVp9nVdZjim93/view?usp=drive_link",
-        alt: "Mountain peaks and valleys",
-    },  {
-        id: 27,
-        category: "Mountains",
-        src: "https://drive.google.com/file/d/18UXVjOVVtS2st3zyBKPNGJKNMbz72t_a/view?usp=drive_link",
-        alt: "Mountain peaks and valleys",
-    },  {
-        id: 28,
-        category: "Mountains",
-        src: "https://drive.google.com/file/d/1D6gAST9vpD6-SpvJGZ1BCUVW5rM8U1QM/view?usp=drive_link",
+        src: images[24],
         alt: "Mountain peaks and valleys",
     },
+    // {
+    //     id: 26,
+    //     category: "Mountains",
+    //     src: images[25],
+    //     alt: "Mountain peaks and valleys",
+    // },  {
+    //     id: 27,
+    //     category: "Mountains",
+    //     src: images[26],
+    //     alt: "Mountain peaks and valleys",
+    // },  {
+    //     id: 28,
+    //     category: "Mountains",
+    //     src: images[27],
+    //     alt: "Mountain peaks and valleys",
+    // },
 ];
 
 // Contact Page Data

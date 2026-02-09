@@ -64,7 +64,7 @@ export function Reviews() {
                                 </div>
                             </div>
                             <p className="text-sky-100 font-medium text-lg">
-                                <span className="font-bold">150+</span> verified reviews on TripAdvisor
+                                <span className="font-bold">300+</span> verified reviews on TripAdvisor
                             </p>
                         </div>
 
@@ -183,7 +183,7 @@ export function Reviews() {
                                             <Star key={i} size={20} className="fill-[#1588ff] text-[#1588ff]" />
                                         ))}
                                     </div>
-                                    <p className="text-slate-600 mt-2">Based on 150+ reviews</p>
+                                    <p className="text-slate-600 mt-2">Based on 300+ reviews</p>
                                 </div>
                             </div>
                             <a

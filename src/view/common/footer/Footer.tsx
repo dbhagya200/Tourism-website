@@ -36,7 +36,7 @@ export function Footer() {
                     {/* --- COLUMN 1: Brand & Socials --- */}
                     <div className="flex flex-col items-center lg:items-start max-w-sm mx-auto lg:mx-0">
                         <h2 className="text-3xl font-black tracking-tight text-white mb-4">
-                            CEYLON - <span className="text-sky-400">VISIT TOURS</span>
+                            CEYLON VISIT TOURS - <span className="text-sky-400">SRI LANKA</span>
                         </h2>
                         <p className="text-sky-100/80 mb-8 text-sm leading-relaxed">
                             Discover hidden gems with unmatched luxury and local expertise across Sri Lanka.
@@ -124,7 +124,7 @@ export function Footer() {
                 {/* --- BOTTOM: Copyright --- */}
                 <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-sky-200/40">
                     <p>
-                        © 2026 Ceylon Visit Tours.
+                        © 2026 Ceylon Visit Tours-Sri Lanka.
                     </p>
                     <div className="flex gap-6">
                         <Link to="#" className="hover:text-sky-400 transition-colors">Privacy</Link>
