@@ -289,7 +289,6 @@ export function Home() {
                                 </div>
                                 <span className="text-2xl font-bold">5.0</span>
                             </div>
-                            <p className="text-slate-500 text-sm mt-1">150+ reviews</p>
                         </div>
 
                         {/* Google Rating */}
@@ -310,7 +309,6 @@ export function Home() {
                                 </div>
                                 <span className="text-2xl font-bold">5.0</span>
                             </div>
-                            <p className="text-slate-500 text-sm mt-1">150+ reviews</p>
                         </div>
                     </div>
 
