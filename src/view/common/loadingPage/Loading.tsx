@@ -23,7 +23,7 @@ export function Loading() {
 
             {/* Brand Text */}
             <h1 className="text-2xl font-black tracking-tight text-slate-900 mb-2 font-serif animate-pulse">
-                CEYLON <span className="text-sky-500">VISTA</span>
+                CEYLON VISIT TOURS - <span className="text-sky-500">SRI LANKA</span>
             </h1>
 
             {/* Subtext */}
