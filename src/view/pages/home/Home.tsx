@@ -22,7 +22,7 @@ export function Home() {
             script.src = 'https://www.jscache.com/wejs?wtype=selfserveprop&uniq=1&locationId=8862399&lang=en_US&rating=true&nreviews=4&writereviewlink=true&popIdx=true&iswide=false&border=true&display_version=2';
             script.async = true;
             script.charset = 'utf-8';
-            script.onload = () => setLoadingReviews(false);
+            // script.onload = () => setLoadingReviews(false);
 
             const container = document.getElementById('tripadvisor-widget-container');
             if (container) {
