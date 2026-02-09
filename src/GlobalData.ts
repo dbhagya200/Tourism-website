@@ -1,10 +1,12 @@
 import {
     Mail, MapPin, Facebook,
     Instagram, MessageCircle,
-    Youtube, MessageSquare, Globe,
-    Star, Send
+    Youtube,
+    Send
 } from "lucide-react";
 import {TiktokIcon} from "./view/common/footer/Footer.tsx";
+import {GoogleIcon} from "./view/common/icons/GoogleIcon.tsx";
+import {FaTripadvisor, FaWeixin, FaWhatsapp} from "react-icons/fa";
 // import mountainImage from "/cvt-images/IMG_0170.jpg";
 
 // Get all images from the folder
@@ -549,31 +551,31 @@ export const socialLinks = [
         iconColor: "text-white"
     },
     {
-        icon: Star,
+        icon: GoogleIcon,
         href: "https://share.google/IrlqKkU39u7eX2QxY",
         label: "Google",
-        bgColor: "bg-[#2E944B]",
-        hoverBg: "hover:bg-[#34A853]",
+        bgColor: "bg-white",
+        hoverBg: "hover:bg-white",
         iconColor: "text-white"
     },
     {
-        icon: Globe,
+        icon: FaTripadvisor,
         href: "https://www.tripadvisor.co.uk/Attraction_Review-g297896-d27698089-Reviews-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html",
         label: "TripAdvisor",
-        bgColor: "bg-[#2DC691]",
-        hoverBg: "hover:bg-[#34E0A1]",
+        bgColor: "bg-[#00AF87]",
+        hoverBg: "hover:bg-[#00C494]",
         iconColor: "text-white"
     },
     {
-        icon: MessageCircle,
+        icon: FaWhatsapp,
         href: "https://wa.me/message/RUNTC5D42W2QI1",
         label: "WhatsApp",
-        bgColor: "bg-[#22C55E]",
+        bgColor: "bg-[#1DA851]",
         hoverBg: "hover:bg-[#25D366]",
         iconColor: "text-white"
     },
     {
-        icon: MessageSquare,
+        icon: FaWeixin,
         href: "weixin://dl/chat?wxid_mdvgqxr7r9jr12",
         label: "WeChat",
         bgColor: "bg-[#06B056]",

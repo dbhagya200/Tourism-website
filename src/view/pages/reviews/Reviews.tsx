@@ -3,7 +3,7 @@ import { Star, ExternalLink, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Reviews() {
-    const TRIPADVISOR_URL = "https://www.tripadvisor.com/Attraction_Review-g297896-d8862399-Reviews-Visit_Ceylon_Tours-Galle_Galle_District_Southern_Province.html";
+    const TRIPADVISOR_URL = "https://www.tripadvisor.co.uk/Attraction_Review-g297896-d27698089-Reviews-Ceylon_Visit_Tours_Sri_Lanka-Galle_Galle_District_Southern_Province.html";
 
     // Load TripAdvisor widget script
     useEffect(() => {
