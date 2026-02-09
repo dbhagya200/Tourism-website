@@ -281,12 +281,27 @@ export const reels = [
 export const allReviews = [
     {
         id: 1,
-        name: "Amara Perera",
-        role: "Local Guide • Google",
-        avatar: "https://i.pravatar.cc/150?u=1",
-        comment: "The hiking experience in Ella was beyond magical. Ceylon Vista Tours made it so easy!",
+        author: "Traveler1969",
         rating: 5,
-        verified: true,
+        date: "September 14, 2025",
+        title: "Wonderful family experience in Sri Lanka\n",
+        content: "We have just arrived from a 15-day tour in this fascinating country. " +
+            "We have traveled with family, children and other family friends." +
+            "Sri Lanka really is a highly recommended, very safe and accessible destination for traveling with young children." +
+            " The people are super respectful, hospitable and very friendly. Always ready to help and teach you their culture." +
+            " It is a very genuine country, of unforgettable landscapes, framed in nature." +
+            " Admeh and his team have demonstrated great professionalism, " +
+            "guiding our experience always attentive to meet our needs and meet our expectations. " +
+            "Always with much pampering, patience and respecting our rhythms and especially the children. " +
+            "It has really exceeded our expectation making our experience in your country totally rewarding and very enjoyed. " +
+            "It helps you personalize the tour and the different experiences, always conveying a lot of passion," +
+            " love and respect for your country and the local people." +
+            " I definitely recommend it 100%",
+        source: "TripAdvisor",
+        sourceUrl: "https://www.tripadvisor.com/ShowUserReviews-g297896-d8862399-r1030310635-Visit_Ceylon_Tours-Galle_Galle_District_Southern_Province.html?m=19905",
+        // country: "Switzerland",
+        tripType: "Traveled with family",
+        stayDate: "September 2025"
     },
     {
         id: 2,
