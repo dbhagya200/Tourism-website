@@ -7,7 +7,6 @@ import {
 import {TiktokIcon} from "./view/common/footer/Footer.tsx";
 import {GoogleIcon} from "./view/common/icons/GoogleIcon.tsx";
 import {FaTripadvisor, FaWeixin, FaWhatsapp} from "react-icons/fa";
-// import mountainImage from "/cvt-images/IMG_0170.jpg";
 
 // Get all images from the folder
 const imageModules = import.meta.glob('../public/cvt-images/*.{jpg,jpeg,png,webp}', {
@@ -535,12 +534,19 @@ export const galleryItems = [
     },  {
         id: 24,
         category: "Ella",
-        src: images[23],
-        alt: "Train Tour",
-    },  {
-        id: 25,
-        category: "Down South",
         src: images[24],
+        alt: "Train Tour",
+    },
+    {
+        id: 25,
+        category: "Sigiriya",
+        src: images[23],
+        alt: "Pidurangala Rock",
+    },
+    {
+        id: 26,
+        category: "Down South",
+        src: images[25],
         alt: "Chilling With Coconut",
     },
     // {
