@@ -9,7 +9,7 @@ import {GoogleIcon} from "./view/common/icons/GoogleIcon.tsx";
 import {FaTripadvisor, FaWeixin, FaWhatsapp} from "react-icons/fa";
 
 // Get all images from the folder
-const imageModules = import.meta.glob('../public/*.{jpg,jpeg,png,webp}', {
+const imageModules = import.meta.glob('../public/cv-I/*.{jpg,jpeg,png,webp}', {
     eager: true,
     import: 'default'
 });
