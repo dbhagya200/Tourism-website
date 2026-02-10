@@ -42,6 +42,7 @@ export function Navbar() {
                         isScrolled ? "text-blue-600" : "text-white"
                     } hover:text-sky-400`}
                 >
+                    {/*<img src="/public/Vertical Logo.png" alt="Ceylon Visit Tours" className="h-12 w-auto" />*/}
                     CEYLON VISIT TOURS - <span className={isScrolled ? "text-sky-400" : "text-sky-200"}>SRI LANKA</span>
                 </Link>
 
