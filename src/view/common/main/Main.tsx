@@ -11,7 +11,7 @@ export function Main() {
         <main className="bg-slate-900 ">
             <Routes>
                 <Route index element={<Home/>} />
-                <Route index element={<Main />} />
+                {/*<Route index element={<Main />} />*/}
                 <Route path="reels" element={<TravelReels />} />
                 {/*<Route path="packages" element={<Packages />} />*/}
                 <Route path="reviews" element={<Reviews />} />
