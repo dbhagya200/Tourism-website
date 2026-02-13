@@ -9,7 +9,7 @@ export function DefaultLayout() {
             <Navbar />
             <Main/>
             <Footer />
-            <SideContactBar/>
+            {/*<SideContactBar/>*/}
         </>
     );
 
